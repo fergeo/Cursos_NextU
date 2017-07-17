@@ -1,6 +1,51 @@
+/*Estilo para la pagina principal*/
+html
+{
+  background-color: #02010A;
+}
+
+/*Estilo para la cabecera*/
 header
 {
   background-color: #5B7989;
-  width: 1vw;
-  border-radius: 10px;
+  width: 100%;
+  border-radius: 10px 10px 0px 0px;
 }
+
+/*Estilo para el titulo*/
+.Titulo
+{
+  color: white;
+  text-align: left;
+  text-shadow: 2px 2px 2px #02010A;
+  margin-left: 20px;
+}
+
+/*Estilo para el menu*/
+.Menu
+{
+  color: white;
+  text-align: right;
+  text-decoration: none;
+  font-size: 30px;
+  word-spacing: 10px;
+  margin-right: 20px;
+}
+
+/*Estilo para la seccion de la imagen central*/
+.Imagen_Central
+{
+  background-color: #82C3A6;
+  width: 100%;
+  text-align: center;
+}
+
+/*Estilo para la seccion de imagen secundaria*/
+.Imagenes_Secundarias
+{
+  background-color: #D5C75F;
+  width: 100%;
+}
+
+/*Estilo para el pie de pagina*/
+.Pie_Pagina
