@@ -2,6 +2,9 @@
 html
 {
   background-color: #02010A;
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
 }
 
 /*Estilo para la cabecera*/
@@ -45,7 +48,77 @@ header
 {
   background-color: #D5C75F;
   width: 100%;
+  height: 40%;
+  border: 1px;
+}
+
+/*Estilo para la imagen de la izquierda*/
+.Imagen_Paisajes:hover
+{
+  transform: rotate(10deg);
+  /*color de sombra #82C3A6*/
+  border: 2px;
+}
+
+/*Estilo para la imagen de la derecha*/
+.Imagen_Retratos:hover
+{
+  transform: translate(20px,-5px);
+  /*color de sombra #82C3A6*/
+  border: 2px;
 }
 
 /*Estilo para el pie de pagina*/
 .Pie_Pagina
+{
+  background-color: #C6D5C5;
+  width: 100%;
+  border-radius: 0px 0px 10px 10px;
+}
+
+/*Media querie para desktop*/
+@media only screen and (min-width: 900px)
+{
+  .Imagenes_Secundarias
+      {
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: row;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+      }
+
+  #Imagenes
+      {
+        width: 30%;
+        margin: 20px;
+      }
+
+  .Pie_Pagina
+      {
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: row;
+        -webkit-justify-content: space-around;
+        justify-content: space-around;
+      }
+}
+
+/*Media querie para movil*/
+@media only screen and (max-width: 900px)
+{
+  .Imagenes_Secundarias
+      {
+        display: -webkit-flex;
+        display: flex;
+        flex-direction: column;
+        -webkit-justify-content: center;
+        justify-content: center;
+      }
+
+    #Imagenes
+      {
+        width: 30%;
+        margin: 20px;
+      }
+}
