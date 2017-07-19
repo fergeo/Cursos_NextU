@@ -1,7 +1,16 @@
+/*Definición de estilo de fuente*/
+@font-face
+{
+	font-family: DancingScript;
+	src: url(../fuentes/DancingScript-Regular.otf);
+}
+
+
 /*Estilo para la pagina principal*/
 html
 {
   background-color: #02010A;
+  font-family: DancingScript;
   display: -webkit-flex;
   display: flex;
   flex-direction: column;
@@ -41,6 +50,7 @@ header
   background-color: #82C3A6;
   width: 100%;
   text-align: center;
+  box-shadow: 0px 10px 10px 0px rgb(2, 1, 10);
 }
 
 /*Estilo para la seccion de imagen secundaria*/
@@ -81,6 +91,7 @@ header
 {
   .Imagenes_Secundarias
       {
+        box-shadow: 0px 2px 2px 0px rgb(2, 1, 10);
         display: -webkit-flex;
         display: flex;
         flex-direction: row;
@@ -109,6 +120,7 @@ header
 {
   .Imagenes_Secundarias
       {
+        box-shadow: 0px 2px 2px 0px rgb(2, 1, 10);
         display: -webkit-flex;
         display: flex;
         flex-direction: column;
