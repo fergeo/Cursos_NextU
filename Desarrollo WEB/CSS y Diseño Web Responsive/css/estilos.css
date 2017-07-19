@@ -5,15 +5,11 @@
 	src: url(../fuentes/DancingScript-Regular.otf);
 }
 
-
 /*Estilo para la pagina principal*/
 html
 {
   background-color: #02010A;
   font-family: DancingScript;
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
 }
 
 /*Estilo para la cabecera*/
@@ -21,25 +17,28 @@ header
 {
   background-color: #5B7989;
   width: 100%;
+  height: 5%;
   border-radius: 10px 10px 0px 0px;
+  position: fixed;
+  top: 0;
 }
 
 /*Estilo para el titulo*/
-.Titulo
+header section h1
 {
   color: white;
-  text-align: left;
+  float: left;
   text-shadow: 2px 2px 2px #02010A;
   margin-left: 20px;
 }
 
 /*Estilo para el menu*/
-.Menu
+header section a
 {
   color: white;
-  text-align: right;
+  float: right;
   text-decoration: none;
-  font-size: 30px;
+  font-size: 25px;
   word-spacing: 10px;
   margin-right: 20px;
 }
@@ -49,7 +48,13 @@ header
 {
   background-color: #82C3A6;
   width: 100%;
-  text-align: center;
+  height: 40%;
+  position: fixed;
+  top: 5%;
+}
+
+.Imagen_Principal
+{
   box-shadow: 0px 10px 10px 0px rgb(2, 1, 10);
 }
 
@@ -59,6 +64,8 @@ header
   background-color: #D5C75F;
   width: 100%;
   height: 40%;
+  position: fixed;
+  top: 45%;
   border: 1px;
 }
 
@@ -79,11 +86,14 @@ header
 }
 
 /*Estilo para el pie de pagina*/
-.Pie_Pagina
+footer
 {
   background-color: #C6D5C5;
   width: 100%;
+  height: 20%;
   border-radius: 0px 0px 10px 10px;
+  position: fixed;
+  bottom: 0;
 }
 
 /*Media querie para desktop*/
@@ -112,6 +122,7 @@ header
         flex-direction: row;
         -webkit-justify-content: space-around;
         justify-content: space-around;
+        position: fixed;
       }
 }
 
