@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <meta name="viewport" content="width:device-width,user-scalable=no">
+    <meta name="viewport" content="width:device-width">
     <title>Comenzando con la fotografia</title>
   	<link rel="stylesheet" href="css/estilos.css">
     <link rel="stylesheet" href="css/estilos_index.css">
@@ -11,23 +11,31 @@
     <header>
       <section>
         <h1>Comenzando con la fotografia</h1>
-        <a href="../paisajes.html">Paisajes</a>
-        <a href="../retratos.html">Retratos</a>
+        <a href="paisajes.html">Paisajes</a>
+        <a href="retratos.html">Retratos</a>
       </section>
     </header>
-    <section class="Imagen_Central">
-      <img src="imagenes/principal.jpg" class="Imagen_Principal">
-    </section>
-    <section class="Imagenes_Secundarias">
-      <div class=class="Imagen_Paisajes">
-          <img src="imagenes/paisajes.jpg" id="Imagenes">
-          <!--<a href="../paisajes.html">Paisajes</a>-->
-      </div>
-      <div class=class="Imagen_Retratos">
-          <img src="imagenes/retratos.jpg"  id="Imagenes">
-          <!--<a href="../retratos.html">Retratos</a>-->
-      </div>
-    </section>
+    <div class="Contenido">
+      <section class="Imagen_Central">
+        <figure class="Imagen_Principal">
+          <img src="imagenes/principal.jpg" alt="Imagen principal" id="Principal">
+        </figure>
+      </section>
+      <section class="Imagenes_Secundarias">
+        <figure class="Imagen_Paisajes">
+          <figcaption>
+            <a href="paisajes.html">Paisajes</a>
+          </figcaption>
+          <img src="imagenes/paisajes.jpg" alt="Paisajes" id="Paisajes">
+        </figure>
+        <figure class="Imagenes_Retratos">
+          <figcaption>
+            <a href="retratos.html">Retratos</a>
+          </figcaption>
+          <img src="imagenes/retratos.jpg" alt="Retratos" id="Retratos">
+        </figure>
+      </section>
+    </div>
     <footer class="Pie_Pagina">
       <div class="Contactos">
         <h3>Contactos</h3>
