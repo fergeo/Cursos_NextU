@@ -1,0 +1,59 @@
+/*Estilos para la pagina de paisajes*/
+.Paisajes
+{
+  background-color: #D5C75F;
+  width: 100%;
+  height: 60%;
+  top: auto;
+}
+
+.Contenedor div img
+{
+  text-align: center;
+  width: 90%;
+  height: 90%;
+  margin: 1vw;
+}
+
+#imagen1
+{
+  -webkit-filter: blur(10px);
+  filter: blur(10px);
+}
+
+#imagen2, #imagen4, #imagen6
+{
+  -webkit-filter: grayscale(100%);
+  filter: grayscale(100%);
+}
+
+#imagen3
+{
+	-webkit-filter: sepia(90%);
+	filter: sepia(90%);
+}
+
+/*Media querie para desktop*/
+@media only screen and (min-width: 900px)
+{
+
+  .Contenedor
+    {
+  	  display: flex;
+  	  flex-direction: row;
+    }
+
+
+}
+
+/*Media querie para movil*/
+@media only screen and (max-width: 900px)
+{
+
+  .Contenedor
+    {
+    	 display: flex;
+    	 flex-direction: column;
+    }
+
+}

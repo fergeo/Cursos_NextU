@@ -1,129 +1,89 @@
-/*Estilos aplicados a la pagina principal*/
-header section
-{
-  color: white;
-}
-
-/*Estilo para el titulo*/
-header section h1
-{
-  float: left;
-  text-shadow: 2px 2px 2px #02010A;
-  margin-left: 20px;
-}
-
-/*Estilo para el menu*/
-header section a
-{
-  color: white;
-  float: right;
-  text-decoration: none;
-  font-size: 25px;
-  word-spacing: 10px;
-  margin-right: 20px;
-}
-
-/*Estilo para la seccion de la imagen central*/
-.Imagen_Central
+/*Estilo para la sección principla*/
+.Sector_Central
 {
   background-color: #82C3A6;
   width: 100%;
-  height: 40%;
-  position: fixed;
-  top: 5%;
+  height: 60%;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 
-figure[class="Imagen_Principal"]
+/*Estilo para la imagen principal*/
+.Sector_Central img
 {
-  height: 90%;
-  text-align: center;
+  width: 90%;
+  height: 50%;
+  box-shadow: 2px 2px 0px 0px rgb(2, 1, 10);
+  margin: 1vw;
 }
 
-#Principal
-{
-  height: 100%;
-  width: 60%;
-  box-shadow: 0px 2px 2px 0px rgb(2, 1, 10);
-}
-
-/*Estilo para la seccion de imagen secundaria*/
-.Imagenes_Secundarias
+/*Estilo para la sección secundaria*/
+.Sector_Secundario
 {
   background-color: #D5C75F;
   width: 100%;
-  height: 35%;
-  position: fixed;
-  top: 45%;
 }
 
-/*Estilo para la imagen de la izquierda*/
-figure[class="Imagen_Paisajes"]
+/*Estilo para las imagenes secundarias*/
+.Sector_Secundario div img
 {
-  text-align: center;
+  width: 90%;
+  height: 70%;
+  margin: 1vw;
+  box-shadow: 2px 2px 0px 0px rgb(2, 1, 10);
 }
 
-#Paisajes
-{
-  width: 60%;
-  height: 80%;
-  box-shadow: 0px 2px 2px 0px rgb(2, 1, 10);
-}
-
-#Paisajes:hover
+.Sector_Paisajes img:hover
 {
   transform: rotate(10deg);
-  /*color de sombra #82C3A6*/
 }
 
-/*Estilo para la imagen de la derecha*/
-figure[class="Imagenes_Retratos"]
-{
-  text-align: center;
-}
-
-#Retratos
-{
-  width: 60%;
-  height: 80%;
-  box-shadow: 0px 2px 2px 0px rgb(2, 1, 10);
-}
-
-#Retratos:hover
+.Sector_Retratos img:hover
 {
   transform: translate(20px,-5px);
-  /*color de sombra #82C3A6*/
+}
+
+.Sector_Secundario div a
+{
+  font-size: 1.5em;
 }
 
 /*Media querie para desktop*/
 @media only screen and (min-width: 900px)
 {
-    .Contenido
-      {
-        max-width: 900px;
-      }
 
-    .Imagenes_Secundarias
-      {
-        display: -webkit-flex;
-        display: flex;
-        flex-direction: row;
-      }
+  /*Estilo para la sección secundaria*/
+  .Sector_Secundario
+  {
+    display: flex;
+  	flex-direction: row;
+  }
+
+  .Sector_Secundario div
+  {
+  	text-align: center;
+    width: 50%;
+  }
+
 }
 
-/*edia querie para movil*/
+
+/*Media querie para movil*/
 @media only screen and (max-width: 900px)
 {
-  .Contenido
-    {
-      max-width: 100%;
-    }
 
-  .Imagenes_Secundarias
-    {
-      display: -webkit-flex;
-      display: flex;
-      flex-direction: column;
-      -webkit-justify-content: center;
-      justify-content: center;
-    }
+  /*Estilo para la sección secundaria*/
+  .Sector_Secundario
+  {
+    display: flex;
+  	flex-direction: column;
+  }
+
+  .Sector_Secundario div
+  {
+  	text-align: center;
+  }
+
 }

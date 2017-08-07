@@ -16,50 +16,153 @@ html
 /*Estilo para la cabecera*/
 header
 {
-  background-color: #5B7989;
-  width: 100%;
-  height: 5%;
+	color: white;
+	background-color: #5B7989;
   border-radius: 10px 10px 0px 0px;
-  position: fixed;
-  top: 0;
+	height: 5%;
+	width: 100%;
+	/*Animacion
+	animation-name: header-animacion;
+	animation-duration: 2s;
+	-webkit-animation-delay: 1s;
+	-moz-animation-delay: 1s;
+	-o-animation-delay: 1s;
+	animation-delay: 1s;*/
 }
 
-/*Estilo para el pie de pagina*/
+/*Estilo para el titulo*/
+h1
+{
+	text-shadow: 2px 2px 2px #02010A;
+	margin-left: 0.5em;
+}
+
+/*Estilo para la lista de cabecera*/
+ul
+{
+	list-style-type: none;
+	overflow: hidden;
+}
+
+/*Estilo para el menu*/
+ul li
+{
+	padding-right: 1em;
+}
+
+ul li a
+{
+  color: white;
+}
+
+ul li a:visited
+{
+	text-decoration: none;
+}
+
+/*Especificacion de la animacion*/
+@keyframes header-animacion
+{
+	0% {
+				margin-top: 150%;
+			}
+	60% {
+				margin-top: -5%;
+			}
+	100%
+			{
+				margin-top: 0%;
+			}
+}
+
 footer
 {
   background-color: #C6D5C5;
   width: 100%;
-  height: 20%;
+  height: 60%;
+  top: auto;
   border-radius: 0px 0px 10px 10px;
-  position: fixed;
-  bottom: 0;
 }
 
 /*Media querie para desktop*/
 @media only screen and (min-width: 900px)
 {
-  .Pie_Pagina
-      {
-				display: none;
-        display: -webkit-flex;
-        display: flex;
-        flex-direction: row;
-        -webkit-justify-content: space-around;
-        justify-content: space-around;
-      }
+	
+  .Contenido
+    {
+      max-width: 900px;
+			margin-left: auto;
+			margin-right: auto;
+    }
+
+	header
+		{
+			display: flex;
+			flex-direction: row;
+		}
+
+	header div
+		{
+			width: 50%;
+		}
+
+	ul
+		{
+			display: flex;
+			flex-direction: row;
+		}
+
+	footer
+		{
+		  background-color: #C6D5C5;
+		  width: 100%;
+		  height: 60%;
+		  top: auto;
+		  border-radius: 0px 0px 10px 10px;
+		  display: flex;
+		  flex-direction: row;
+		  -webkit-justify-content: center;
+		  justify-content: center;
+		}
+
+	footer div
+		{
+		  margin: 3%;
+		}
+
 }
 
 /*Media querie para movil*/
 @media only screen and (max-width: 900px)
 {
-		.Pie_Pagina
-		  {
-			 display: none;
-			 position: fixed;
-		   display: -webkit-flex;
-		   display: flex;
-		   flex-direction: column;
-		   -webkit-justify-content: space-around;
-		   justify-content: space-around;
-		  }
+
+  .Contenido
+    {
+      max-width: 100%;
+    }
+
+		header
+			{
+				display: flex;
+				flex-direction: column;
+			}
+
+		header div
+			{
+				text-align: center;
+			}
+
+		/*Estilo para el pie de pagina*/
+		footer
+			{
+			  display: flex;
+			  flex-direction: column;
+			}
+
+		footer div
+			{
+			 	text-align: center;
+			  width: 50%;
+			}
+
 }
