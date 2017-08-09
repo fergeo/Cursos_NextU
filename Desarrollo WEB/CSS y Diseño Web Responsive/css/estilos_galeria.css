@@ -52,8 +52,15 @@
 
   .Contenedor
     {
-    	 display: flex;
-    	 flex-direction: column;
+    	display: flex;
+    	flex-direction: column;
+
+    }
+
+  .Contenedor div img
+    {
+      -webkit-justify-content: center;
+ 		  justify-content: center;
     }
 
 }
