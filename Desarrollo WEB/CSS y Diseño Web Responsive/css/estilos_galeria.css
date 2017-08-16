@@ -7,12 +7,17 @@
   top: auto;
 }
 
+.Contenedor div
+{
+  margin: 1vw;
+  text-align: center;
+}
+
 .Contenedor div img
 {
-  text-align: center;
+
   width: 90%;
   height: 90%;
-  margin: 1vw;
 }
 
 #imagen1
@@ -39,10 +44,10 @@
 
   .Contenedor
     {
+    	display: -webkit-flex;
   	  display: flex;
   	  flex-direction: row;
     }
-
 
 }
 
@@ -52,15 +57,9 @@
 
   .Contenedor
     {
+    	display: -webkit-flex;
     	display: flex;
     	flex-direction: column;
-
-    }
-
-  .Contenedor div img
-    {
-      -webkit-justify-content: center;
- 		  justify-content: center;
     }
 
 }
