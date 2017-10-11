@@ -1,0 +1,44 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width initial-scale=1'>
+    <meta name='mobile-web-app-capable' content='yes'>
+    <link rel='stylesheet' href='css/estilos.css'>
+	  <script type="text/javascript" src="js/scripts.js"></script>
+    <title>Estudiantes</title>
+  </head>
+  <body class='music-body'>
+    <header>
+      <h1>Estudiantes</h1>
+    </header>
+    <div id="contenedor">
+      <table>
+        <form id="formulario">
+          <thead>
+            <tr>      
+              <td class="cabecera">Código</td>
+              <td class="cabecera">Nombre</td>
+              <td class="cabecera">Nota</td>
+            </tr>  
+          </thead>
+          <tbody id="tEstudiantes">
+          </tbody>
+          <tfoot>
+            <tr>
+                <td colspan="2" class="prodmedio">Promedio</td>
+                <td id="pormedio"></td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                <input id="mostrar" name="mostrar" type="submit" value="Morstar Alumnos" onclick="mostrarAlumnos()">
+                <input id="pormedio" name="prodmedio" type="submit" value="Calcular Promedio" onclick="mostrarPromedio()">
+                <input id="mayor" name="mayor" type="submit" value="Mayor Nota" onclick="mostrarMayor()">
+                <input id="menor" name="menor" type="submit" value="Menor Nota" onclick="mostrarMenor()">
+              </td>
+            </tr>
+          </tfoot>
+        </form>
+      </table>
+    </div>
+</html>
