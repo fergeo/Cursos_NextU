@@ -1,25 +1,36 @@
+/*Formato para el body*/
 body
 {
   background-color: #AABCF2;
 }
 
+/*Formato para el titulo*/
 h1
 {
   text-align: center;
   text-decoration: underline;
 }
 
+/*Formato para la cabecera y el pie de la tabla*/
 thead, tfoot
 {
   background-color: #4169E1;
   font-weight: bold;
 }
 
+/*Formato para ponerle un borde a la tabla*/
 table,thead, td, tr
 {
   border: 1px solid black;
 }
 
+/*Centra los titulos de las tablas*/
+.cabecera
+{
+  text-align: center;
+}
+
+/*Contenedor que se utiliza para centrar la tabla*/
 .cTable
 {
   display: flex;
@@ -28,11 +39,14 @@ table,thead, td, tr
   justify-content: center;
 }
 
+/*Centrado unicamente de la columna de las notas de los alumnos*/
 td:nth-child(3) 
 {
-  text-align: right;
+  text-align: center;
 }
 
+
+/*Formato para los botones*/
 .bonton , .bontonMayor , .bontonMenor
 {
   text-decoration: none;
@@ -46,12 +60,14 @@ td:nth-child(3)
   text-align: center;
 }
 
+/*Formato para el boton que busca el mayor mientras el cursor este sobre el */
 .bontonMayor:hover
 {
   background-color: #73E3C7;
   color: black;
 }
 
+/*Formato para el boton que busca el menor mientras el cursor este sobre el */
 .bontonMenor:hover
 {
   background-color: red;

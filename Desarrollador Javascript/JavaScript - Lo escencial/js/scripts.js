@@ -1,3 +1,4 @@
+//JSON correspondiente a los alumnos.
 var estudiantes = [{ "codigo" : "01" , "alumno": "Ramon Rodriguez" , "nota" : "5"   }, 
                    { "codigo" : "02" , "alumno": "Valeria Peralta" , "nota" : "2"   }, 
                    { "codigo" : "03" , "alumno": "Gabriela Perez"  , "nota" : "9"   }, 
@@ -10,21 +11,21 @@ var estudiantes = [{ "codigo" : "01" , "alumno": "Ramon Rodriguez" , "nota" : "5
                    { "codigo" : "10" , "alumno": "Juan Lucas"      , "nota" : "7"   }]; 
 
 
-
+//Desarollo de la funcion que mostrara los datos de todos los alumnos.
 function leerJSON(json) 
 {
   var i,j; // Contador para la cantidad de alumnos i, j para recorrer los 3 datos proveido de cada estudiante.
   var hilera = "<tr></tr>"; // Variable que se ira guardando las filas.
   var celda; // Variable para guardar las celdas de la tabla.
   var textoCelda; // Variable que se usara para poner el contenido de cada celda.
-  var tblBody;
+  var tblBody; //Variable para situarse en el cuerpo de la tabla para luego ir adicionando las filas y sus respectivas celdas
   
   try
     {
 
       tblBody = document.getElementById("tEstudiantes");
 
-      //Para que si el usuario apreta mas de una vez el boton de mostrar no se repitan los datos
+      //Para que si el usuario apreta mas de una vez el boton de mostrar no se repitan los datos.
       if ( !tblBody.outerHTML.includes('tr') )
        {
 
@@ -74,17 +75,20 @@ function leerJSON(json)
 
 }
 
+
 function mostrarAlumnos() 
 {
   leerJSON(estudiantes);    
 }
 
+
+//Desarollo de la funcion que calcula el promedio de los alumnos de un aula.
 function calcularPromedio(json)
 {
   var prom = 0; //Variable donde se va a guardar el promedio.
   var acum = 0; //Variable donde se va a guardar la sumatoria de las notas de los alumnos.
-  var tblBody;
-  var i;
+  var tblBody;  //Variable para situarse en el cuerpo de la tabla para luego ir adicionando las filas y sus respectivas celdas
+  var i; //Variable de iteracion
   
   try
    {
@@ -116,18 +120,21 @@ function calcularPromedio(json)
 
 }
 
+
 function mostrarPromedio()
 {
   calcularPromedio(estudiantes);
 }
 
+
+//Desarollo de la funcion que busca las mayores notas de los alumnos de haber mas de uno con mayor nota marca todos los alumnos con la mayor nota.
 function mayorNota(json)
 {
-  //Definicion de variables
-	var i;
-  var tblBody;
-  var mayor; // Guarda el valor de la mayor nota
-  var fila;
+  //Definicion de variables.
+	var i; //Variable de iteracion
+  var tblBody;  //Variable para situarse en el cuerpo de la tabla para luego ir adicionando las filas y sus respectivas celdas.
+  var mayor; // Guarda el valor de la mayor nota.
+  var fila; //Variable para guardar la fila a la que se le debe cambiar el formato para resaltar el dato a mostrar.
 
   try
    {
@@ -171,17 +178,21 @@ function mayorNota(json)
 
 }
 
+
 function mostrarMayor()
 {
   mayorNota(estudiantes);
 }
 
+
+//Desarollo de la funcion que busca las menores notas de los alumnos de haber mas de uno con menor nota marca todos los alumnos con la menor nota.
 function menorNota(json)
 {
   //Definicion de variables
-  var i;
-  var tblBody;  
-  var menor; // Guarda el valor de la menor nota
+  var i; //Variable de iteracion
+  var tblBody;  //Variable para situarse en el cuerpo de la tabla para luego ir adicionando las filas y sus respectivas celdas.
+  var menor; // Guarda el valor de la menor nota.
+  var fila;  //Variable para guardar la fila a la que se le debe cambiar el formato para resaltar el dato a mostrar.
 
   try
    {
@@ -225,6 +236,7 @@ function menorNota(json)
    }
 	
 }
+
 
 function mostrarMenor()
 {
