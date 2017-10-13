@@ -1,4 +1,4 @@
-var estudiantes = [{ "codigo" : "01" , "alumno": "Ramon Rodriguez" , "nota" : "2"   }, 
+var estudiantes = [{ "codigo" : "01" , "alumno": "Ramon Rodriguez" , "nota" : "1"   }, 
                    { "codigo" : "02" , "alumno": "Valeria Peralta" , "nota" : "2"   }, 
                    { "codigo" : "03" , "alumno": "Gabriela Perez"  , "nota" : "9"   }, 
                    { "codigo" : "04" , "alumno": "Carlos Mercado"  , "nota" : "7.5" }, 
@@ -10,43 +10,62 @@ var estudiantes = [{ "codigo" : "01" , "alumno": "Ramon Rodriguez" , "nota" : "2
                    { "codigo" : "10" , "alumno": "Juan Lucas"      , "nota" : "7"   }]; 
 
 
+
 function leerJSON(json) 
 {
-  var i;
-  var hilera; // Variable que se ira guardando las filas
-  var celda; // Variable para guardar las celdas de la tabla
-  var textoCelda; // Variable que se usara para poner el contenido de cada celda
+  var i,j; // Contador para la cantidad de alumnos i, j para recorrer los 3 datos proveido de cada estudiante.
+  var hilera = "<tr></tr>"; // Variable que se ira guardando las filas.
+  var celda; // Variable para guardar las celdas de la tabla.
+  var textoCelda; // Variable que se usara para poner el contenido de cada celda.
+  var tblBody;
+  
 
   try
     {
-alert("antes1");
+
+     tblBody = document.getElementById("tEstudiantes");
+
+     //Para que si el usuario apreta mas de una vez el boton de mostrar no se repitan los datos
+     if ( tblBody.outerHTML.includes('tr') )
+      {
+        tblBody.outerHTML = '<tbody id="tEstudiantes"></tbody>';
+      }
+
+
+     tblBody = document.getElementsByTagName("tbody")[0];
+          
      for(i = 0; i < json.length; i++) 
       {
         var hilera = document.createElement("tr");
           
-        for(i = 0; i < 3; i++) 
+        for(j = 0; j < 3; j++) 
           {
             celda = document.createElement("td");
         
-            if ( i == 0 )
+            if ( j == 0 )
               {
                 textoCelda = document.createTextNode(json[i].codigo);
+                celda.appendChild(textoCelda);
               }
-            else if ( i == 1 )
+            else if ( j == 1 )
               {
                 textoCelda = document.createTextNode(json[i].alumno); 
+                celda.appendChild(textoCelda);
               }
-              else if ( i == 2 )
+              else if ( j == 2 )
                {
                  textoCelda = document.createTextNode(json[i].nota); 
+                 celda.appendChild(textoCelda);
                }
-             celda.appendChild(textoCelda);
+             
              hilera.appendChild(celda);
-            }
+             
+          }
 
-            alert("Nombre:"+json[i].nombre);
-            document.getElementById("tEstudiantes").appendChild(hilera);
+          tblBody.appendChild(hilera);
+
        }
+
     }
 
     catch (error)
@@ -66,23 +85,106 @@ function calcularPromedio(json)
   var prom = 0; //Variable donde se va a guardar el promedio.
   var acum = 0; //Variable donde se va a guardar la sumatoria de las notas de los alumnos.
   var i;
-
-  for(i = 0; i < json.length; i++) 
+  
+  try
    {
-     acum+=json[i].nota;
-   } 
+     
+     for(i = 0; i < json.length; i++) 
+      {
+        acum+=Number(json[i].nota);
+      } 
 
-  prom = acum / i ; // Se divide por diez como ya se sabe de un principio que son 10 estudiantes.
+     prom = acum / i ; // Se divide por diez como ya se sabe de un principio que son 10 estudiantes.
 
-  document.getElementById('promedio').innerHTML = prom ;
+     document.getElementById("promedio").innerHTML = prom ;
+     
+   }
+
+  catch (error)
+    {
+      alert(error.message);
+    }
+
+
+}
+
+function mostrarPromedio()
+{
+  calcularPromedio(estudiantes);
 }
 
 function mayorNota(json)
 {
-	
+  //Definicion de variables
+	var i;
+  var menor; // Guarda el valor de la mayor nota
+
+  try
+   {
+
+     for(i = 0; i < json.length; i++) 
+      {
+        if ( i == 0 )
+         {
+           menor = json[i].nota;
+         }
+        else if ( json[i].nota < menor )
+         {
+           menor = json[i].nota;
+         }
+
+      } 
+
+      console.log(menor);
+
+   }
+
+  catch (error)
+   {
+      alert(error.message);    
+   }
+
+}
+
+function mostrarMayor()
+{
+  mayorNota(estudiantes);
 }
 
 function menorNota(json)
 {
+  //Definicion de variables
+  var i;
+  var mayor; // Guarda el valor de la mayor nota
+
+  try
+   {
+
+     for(i = 0; i < json.length; i++) 
+      {
+        if ( i == 0 )
+         {
+           mayor = json[i].nota;
+         }
+        else if ( json[i].nota > mayor )
+         {
+           mayor = json[i].nota;
+         }
+
+      } 
+
+      console.log(mayor);
+
+   }
+
+  catch (error)
+   {
+      alert(error.message);    
+   }
 	
+}
+
+function mostrarMenor()
+{
+  menorNota(estudiantes);
 }

@@ -12,7 +12,7 @@
     <header>
       <h1>Estudiantes</h1>
     </header>
-    <div id="contenedor">
+    <div class="contenedor">
       <table>
         <form id="formulario">
           <thead>
@@ -26,15 +26,15 @@
           </tbody>
           <tfoot>
             <tr>
-                <td colspan="2" class="prodmedio">Promedio</td>
-                <td id="pormedio"></td>
+                <td colspan="2" style="text-align: right;">Promedio</td>
+                <td id="promedio" style="text-align: center;"></td>
             </tr>
             <tr>
               <td colspan="3">
-                <input id="mostrar" name="mostrar" type="submit" value="Morstar Alumnos" onclick="mostrarAlumnos()">
-                <input id="pormedio" name="prodmedio" type="submit" value="Calcular Promedio" onclick="mostrarPromedio()">
-                <input id="mayor" name="mayor" type="submit" value="Mayor Nota" onclick="mostrarMayor()">
-                <input id="menor" name="menor" type="submit" value="Menor Nota" onclick="mostrarMenor()">
+                <input value="Mostrar Alumnos" onclick="mostrarAlumnos()">
+                <input value="Calcular Promedio" onclick="mostrarPromedio()">
+                <input value="Mayor Nota" onclick="mostrarMayor()">
+                <input value="Menor Nota" onclick="mostrarMenor()">
               </td>
             </tr>
           </tfoot>

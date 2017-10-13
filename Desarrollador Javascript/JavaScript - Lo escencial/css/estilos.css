@@ -1,24 +1,30 @@
 body
 {
-  background-color: "gray";
+  background-color: #9ACD32;
 }
 
 h1
 {
-  text-align: "center";
+  text-align: center;
 }
 
-table, tbody
+.contenedor
 {
-	border: 1px solid black;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-align-content: center;
+  align-content: center;
+}
+
+table, thead, td, tr
+{
+  border: 1px solid black;
 }
 
 .cabecera
 {
-	text-align: "center";
+  text-align: center;
 }
 
-.prodmedio
-{
-	text-align: "right";
-}
