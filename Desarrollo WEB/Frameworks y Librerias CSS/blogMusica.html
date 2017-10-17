@@ -8,6 +8,10 @@
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+
+   
+ 
+
     <link rel="stylesheet" href="css/estilos.css">
     <title>Jean Michel Jarre</title>
   </head>
@@ -22,8 +26,59 @@
         </div>
       </nav>
     </header>
-
-
-
+    <nav class="navbar menu-navbar">
+     <div class="row menu-row">
+       <div class="col-12">
+         <ul class="nav navbar-nav">
+           <div class="row boton-row">
+             <div class="col-2"><li class="active"><button class="btn navbar-btn"><a href="#">Inicio</a></button></li></div>
+             <div class="col-2"><li><button class="btn navbar-btn"><a href="#">Biografia</a></button></li></div> 
+             <div class="col-2"><li><button class="btn navbar-btn"><a href="#">Discografia</a></li></div> 
+             <div class="col-2"><li><button class="btn navbar-btn"><a href="#">Top 10</a></li></div> 
+             <div class="col-2"><li><button class="btn navbar-btn"><a href="#">Conciertos</a></li></div> 
+             <div class="col-2"><li><button class="btn navbar-btn"><a href="#">Galeria de Imagenes</a></li></div>    
+           </div>
+         </ul>
+       </div>
+     </div>
+    </nav>
+    <div class='row contenido-row'>
+      <div class='col-lg-8 col-md-8 col-sm-8 col-xs-8 contenido-column'>
+        <div class="row principal-row">
+          <div class='col-lg-7 col-md-7 col-sm-7 col-xs-7 articulo-principal-column'>
+            <h1>Jean-Michel Jarre, por primera vez en la Argentina</h1>
+            <p>
+              El músico francés Jean-Michel Jarre brindará un show en la Argentina por primera vez, en el marco de su Electrónica Tour 2017. La cita es el próximo 9 de noviembre en el Estadio GEBA.
+              El compositor e intérprete francés, padrino y pionero de la música electrónica, electro-rock y música ambiental, realizará un show en vivo sin precedentes, en lo que será un auténtico viaje musical. Jarre interpretará nuevas obras de su LP doble, Electrónica, junto con los clásicos de álbumes que han sido hits, como Oxygene y Equinoxe. Las entradas se pueden conseguir a través de topshow.com.ar y en sus puntos de venta.
+              Jarre ha sido uno de los pioneros en interpretar la música electrónica tal como se la conoce hoy. Famoso por sus efectos visuales asombrosos y el uso de tecnología digital innovadora, ha establecido con sus conciertos varios Records Guinness: por ejemplo, cuando 2 millones y medio de espectadores disfrutaron de su presentación en el monumento La Defense en París. Luego, 3 millones y medio de personas lo vieron en vivo en Moscú para celebrar el 850° aniversario de la ciudad.
+            </p>
+          </div>
+          <div class='col-lg-5 col-md-5 col-sm-5 col-xs-5 img-principal-column'>
+            <img class='img-concert' src='imagenes/argConcert.jpg'/>
+          </div>
+        </div>  
+        <div class="row comentario-prin-row">
+          <label for="comment">Comment:</label>
+          <textarea class="form-control" rows="5" id="comment"></textarea>
+        </div>
+        <div class="row secundario-row">
+          <div class='col-lg-3 col-md-3 articulo-principal-column'>
+          </div>
+          <div class='col-lg-3 col-md-3 img-principal-column'>
+          </div>
+        </div> 
+        <div class="row comentario-sec-row">
+          
+        </div> 
+      </div>
+      <div class='col-lg-4 col-md-4 col-sm-4 col-xs-4 buscador-column'>
+        <input type="text" class="form-control input-lg" placeholder="Buscar" />
+        <span class="input-group-btn">
+          <button class="btn btn-info btn-lg" type="button">
+            <i class="glyphicon glyphicon-search"></i>
+          </button>
+        </span>
+      </div>
+    </div>
 </body>
 </html>
