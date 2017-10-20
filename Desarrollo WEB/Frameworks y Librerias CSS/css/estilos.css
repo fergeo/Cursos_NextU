@@ -1,3 +1,13 @@
+html
+{
+  background: 
+}
+
+header
+{
+  width: 100%;
+}
+
 .music-body 
 {
   background: url(../img/fondo.jpg);
@@ -20,7 +30,7 @@
   background-color: #4040A6;
 }
 
-.menu-row
+.row-menu
 {
   width: 100%;
   text-align: center;
@@ -45,18 +55,38 @@
 .contenido-column
 {
   background-color: #4050A6;
-  min-height: 330px;
-  border: 5px;
 }
 
-.articulo-principal-column
+.articulo-column
 {
   color: white;
 }
 
-.buscador-column
+.articulo-column p
 {
-  background-color: #4050A6;
-  min-height: 330px;
-  border: 5px;
+  text-align: justify;
 }
+
+.img-principal-column
+{
+  text-align: center;
+  vertical-align: middle;
+}
+
+.img-concert
+{
+  height: 300px;
+  width: 320px;
+}
+
+.col-ico-coment
+{
+  text-align: center;  
+}
+
+.ico-coment
+{
+  width: 50px;
+  height: 50px;
+}
+
