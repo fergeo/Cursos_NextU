@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width initial-scale=1'>
+    <meta name='mobile-web-app-capable' content='yes'>
+    <link rel='stylesheet' href='css/estilos.css'>
+	  <script type="text/javascript" src="js/scripts.js"></script>
+    <title>Estudiantes</title>
+  </head>
+  <body class='music-body'>
+    <header>
+      <h1>Estudiantes</h1>
+    </header>
+    <div class="contenedor">
+      <form class="datos">
+        <label for="codigo">C&oacute;digo:</label>
+        <input type="text" placeholder="C&oacute;digo" id="codigo">
+        <label for="nombre">Nombre:</label>
+        <input type="text" label="Nombre" placeholder="Nombre" id="nombre">
+        <label for="nota">Nota:</label>
+        <input type="text" label="Nota" placeholder="Nota"  id="nota">
+      </form>
+      <div class="cTable">
+        <table>
+        <form id="formulario">
+          <thead>
+            <tr>      
+              <td class="cabecera">C&oacute;digo</td>
+              <td class="cabecera">Nombre</td>
+              <td class="cabecera">Nota</td>
+            </tr>  
+          </thead>
+          <tbody id="tEstudiantes">
+          </tbody>
+          <tfoot>
+            <tr>
+                <td class="promedio" colspan="2" style="text-align: right;">Promedio</td>
+                <td class="promedio" id="promedio" style="text-align: center;"></td>
+            </tr>
+            <tr>
+              <td colspan="3">
+                <input class="bonton" value="Registrar Estudiante" onclick="registraAlumno()">
+                <input class="bonton" value="Mostrar Estudiante" onclick="mostrarAlumnos()">
+                
+                <input class="bonton" value="Mostrar Promedio" onclick="mostrarPromedio()">
+                <input class="bonton" value="Mostrar Nota Mayor" onclick="mostrarMayor()">
+                <input class="bonton" value="Mostrar Nota Menor" onclick="mostrarMenor()">
+              </td>
+            </tr>
+          </tfoot>
+        </form>
+      </table>
+      </div>
+    </div>
+</html>
