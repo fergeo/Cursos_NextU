@@ -99,28 +99,28 @@ html
 @media (max-width: 770px) 
 {
 
-.menu-navbar
-{
-  display: -webkit-flex;
-  display: flex;
-  flex-direction: column;
-}
+ .menu-navbar
+  {
+   display: -webkit-flex;
+   display: flex;
+   flex-direction: column;
+  }
 
-.navbar-btn
-{
-  width: 100%;
-}
+ .navbar-btn
+  {
+   width: 100%;
+  }
 
-.img-column
-{
-  text-align: center;
-  padding: 10px 0px;  
-}
+ .img-column
+  {
+   text-align: center;
+   padding: 10px 0px;  
+  }
 
-.img-concert
-{
-  height: 300px;
-  width: 350px;
-}
+ .img-concert
+  {
+   height: 300px;
+   width: 350px;
+  }
 
 }

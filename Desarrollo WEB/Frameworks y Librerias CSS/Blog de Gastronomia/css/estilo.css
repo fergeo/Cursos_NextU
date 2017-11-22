@@ -1,0 +1,26 @@
+.gourmet-body
+{
+  background-image: url(../img/background-image.jpg);
+  background-size: 100vh 100vh;  
+}
+
+.grid-container
+{
+  background: transparent; 
+  background-color: #EBCAAA;
+}
+
+.Title, .Slogan
+{
+  text-align: right;
+}
+
+.left-panel
+{
+  background-color: #B4C7E0;
+}
+
+.right-panel
+{
+  background-color: #FFCC99;
+}
