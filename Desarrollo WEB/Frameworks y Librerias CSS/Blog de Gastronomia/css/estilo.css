@@ -24,3 +24,14 @@
 {
   background-color: #FFCC99;
 }
+
+.img-primera , .img-segunda
+{
+  width: 100%;
+  text-align: center;
+}
+
+.input-group
+{
+  padding: 10px 10px;
+}
