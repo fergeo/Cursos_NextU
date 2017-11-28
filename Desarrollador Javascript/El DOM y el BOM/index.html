@@ -13,14 +13,21 @@
       <h1>Estudiantes</h1>
     </header>
     <div class="contenedor">
-      <form class="datos">
-        <label for="codigo">C&oacute;digo:</label>
-        <input type="text" placeholder="C&oacute;digo" id="codigo">
-        <label for="nombre">Nombre:</label>
-        <input type="text" label="Nombre" placeholder="Nombre" id="nombre">
-        <label for="nota">Nota:</label>
-        <input type="text" label="Nota" placeholder="Nota"  id="nota">
+      <form class="miForm">
+        <div>
+          <label for="codigo">C&oacute;digo:</label>
+          <input type="text" placeholder="C&oacute;digo" id="codigo" required="Debe ingresar el c&oacute;digo del Alumno">        
+        </div>
+        <div>
+          <label for="nombre">Nombre:</label>
+          <input type="text" label="Nombre" placeholder="Nombre" id="nombre" required="Debe ingresar el nombre del Alumno">          
+        </div>
+        <div>
+          <label for="nota">Nota:</label>
+          <input type="text" label="Nota" placeholder="Nota"  id="nota" required="Debe ingresar la nota del Alumno">          
+        </div>
       </form>
+      <h1>Listado de Estudiantes</h1>
       <div class="cTable">
         <table>
         <form id="formulario">
@@ -40,12 +47,10 @@
             </tr>
             <tr>
               <td colspan="3">
-                <input class="bonton" value="Registrar Estudiante" onclick="registraAlumno()">
-                <input class="bonton" value="Mostrar Estudiante" onclick="mostrarAlumnos()">
-                
-                <input class="bonton" value="Mostrar Promedio" onclick="mostrarPromedio()">
-                <input class="bonton" value="Mostrar Nota Mayor" onclick="mostrarMayor()">
-                <input class="bonton" value="Mostrar Nota Menor" onclick="mostrarMenor()">
+                <input class="bonton" id="btnRegistrar" value="Registrar Estudiante" onclick="registraAlumno()">            
+                <input class="bonton" id="btnPromedio" value="Mostrar Promedio" onclick="mostrarPromedio()">
+                <input class="bonton" id="btnMayor" value="Mostrar Nota Mayor" onclick="mostrarMayor()">
+                <input class="bonton" id="btnMenor" value="Mostrar Nota Menor" onclick="mostrarMenor()">
               </td>
             </tr>
           </tfoot>
