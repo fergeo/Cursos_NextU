@@ -11,7 +11,7 @@ h1
   text-decoration: underline;
 }
 
-.datos
+form
 {
   display: flex;
   flex-direction: column; 
@@ -62,7 +62,7 @@ td:nth-child(3)
 
 
 /*Formato para los botones*/
-.bonton
+.boton , .botonMayor , .botonMenor
 {
   text-decoration: none;
   padding: 10px;
@@ -73,4 +73,17 @@ td:nth-child(3)
   border-radius: 6px;
   border: 2px solid #0016b0;
   text-align: center;
+}
+
+/*Formato para el boton que busca el mayor mientras el cursor este sobre el */
+.botonMayor:hover
+{
+  background-color: #73E3C7;
+  color: black;
+}
+
+/*Formato para el boton que busca el menor mientras el cursor este sobre el */
+.botonMenor:hover
+{
+  background-color: red;
 }

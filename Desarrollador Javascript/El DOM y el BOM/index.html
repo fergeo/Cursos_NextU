@@ -5,7 +5,6 @@
     <meta name='viewport' content='width=device-width initial-scale=1'>
     <meta name='mobile-web-app-capable' content='yes'>
     <link rel='stylesheet' href='css/estilos.css'>
-	  <script type="text/javascript" src="js/scripts.js"></script>
     <title>Estudiantes</title>
   </head>
   <body class='music-body'>
@@ -13,18 +12,18 @@
       <h1>Estudiantes</h1>
     </header>
     <div class="contenedor">
-      <form class="miForm">
+      <form name="miForm">
         <div>
           <label for="codigo">C&oacute;digo:</label>
-          <input type="text" placeholder="C&oacute;digo" id="codigo" required="Debe ingresar el c&oacute;digo del Alumno">        
+          <input type="text" placeholder="C&oacute;digo" id="codigo" required>        
         </div>
         <div>
           <label for="nombre">Nombre:</label>
-          <input type="text" label="Nombre" placeholder="Nombre" id="nombre" required="Debe ingresar el nombre del Alumno">          
+          <input type="text" label="Nombre" placeholder="Nombre" id="nombre" required>          
         </div>
         <div>
           <label for="nota">Nota:</label>
-          <input type="text" label="Nota" placeholder="Nota"  id="nota" required="Debe ingresar la nota del Alumno">          
+          <input type="number" label="Nota" placeholder="Nota"  id="nota" required>          
         </div>
       </form>
       <h1>Listado de Estudiantes</h1>
@@ -47,10 +46,10 @@
             </tr>
             <tr>
               <td colspan="3">
-                <input class="bonton" id="btnRegistrar" value="Registrar Estudiante" onclick="registraAlumno()">            
-                <input class="bonton" id="btnPromedio" value="Mostrar Promedio" onclick="mostrarPromedio()">
-                <input class="bonton" id="btnMayor" value="Mostrar Nota Mayor" onclick="mostrarMayor()">
-                <input class="bonton" id="btnMenor" value="Mostrar Nota Menor" onclick="mostrarMenor()">
+                <input type="button" class="boton" value="Mostrar Alumnos" id="btnRegistrar">
+                <input type="button" class="boton" value="Calcular Promedio" id="btnPromedio">
+                <input type="button" class="botonMayor" value="Mayor Nota" id="btnMayor">
+                <input type="button" class="botonMenor" value="Menor Nota" id="btnMenor">
               </td>
             </tr>
           </tfoot>
@@ -58,4 +57,6 @@
       </table>
       </div>
     </div>
+    <script type="text/javascript" src="js/scripts.js"></script>
+  </body>
 </html>

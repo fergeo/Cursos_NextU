@@ -1,12 +1,13 @@
 //JSON correspondiente a los alumnos.
-var estudiante; 
+var estudiante;
 
 //Declaración de los Listener
-document.getElementById("btnRegistrar").addEventListener("click",registraAlumno());
-document.getElementById("btnPromedio").addEventListener("click",mostrarPromedio());
-document.getElementById("btnMayor").addEventListener("click",mostrarMayor());
-document.getElementById("btnMenor").addEventListener("click",mostrarMenor());
+document.getElementById("btnRegistrar").addEventListener("click",registraAlumno);
+document.getElementById("btnPromedio").addEventListener("click",mostrarPromedio);
+document.getElementById("btnMayor").addEventListener("click",mostrarMayor);
+document.getElementById("btnMenor").addEventListener("click",mostrarMenor);
 
+//Función que va insertando las celdas de la tabla
 function insertaCelda(elemento,vfila)
 {
   var hilera; 
@@ -16,21 +17,46 @@ function insertaCelda(elemento,vfila)
   
   try
    {   
-    celda = document.createElement("td");   
-    texto = document.getElementById(elemento).value;
-    textoCelda = document.createTextNode(texto);
-    celda.appendChild(textoCelda);
-    vfila.appendChild(celda);   
+     celda = document.createElement("td");   
+     texto = document.getElementById(elemento).value;
+     textoCelda = document.createTextNode(texto);
+     celda.appendChild(textoCelda);
+     vfila.appendChild(celda);   
    }
-
   catch (error)
    {
-     alert(error.message);
+     alert("Función insertaCelda, Error:\n" + error.message);
    }
-
 }
 
 
+//Función para verificar que la nota sea entre 0 y 10
+function verificaNota() 
+{
+  try
+   {
+     var x;
+     x = document.getElementById("nota").value;
+
+     if (isNaN(x) || x < 0 || x > 10) 
+      {
+        alert("La nota debe ser entre cero y diez");
+        return false;
+      }
+     else
+      {
+        return true;
+      }
+
+    }
+  catch (error)
+    {
+      alert("Función verificaNota, Error:\n" + error.message);
+    }
+}
+
+
+//Función que va insertando los alumnos
 function cargarJSON(json)
 {
   var alumno;
@@ -39,41 +65,50 @@ function cargarJSON(json)
   
   try
    {
-     if (!json) 
+     if ( ( document.getElementById("codigo").value != "" ) &&
+            ( document.getElementById("nombre").value != "" ) &&
+              ( document.getElementById("nota").value != "" ) &&
+                 verificaNota() ) 
       {
-        var alumnos = [];
-        alumno = {codigo:document.getElementById("codigo").value , nombre:document.getElementById("nombre").value, nota:document.getElementById("nota").value};     
-        alumnos.push(alumno);
-        json = JSON.stringify(alumnos);   
-      }
-     else
-      {
-        var registros = JSON.parse(json);
-        alumno = {codigo:document.getElementById("codigo").value , nombre:document.getElementById("nombre").value, nota:document.getElementById("nota").value};
-        registros.push(alumno);
-        json = JSON.stringify(registros); 
-      }
+        if (!json) 
+         {
+           var alumnos = [];
+           alumno = {codigo:document.getElementById("codigo").value , nombre:document.getElementById("nombre").value, nota:document.getElementById("nota").value};     
+           alumnos.push(alumno);
+           json = JSON.stringify(alumnos);   
+         }
+        else
+         {
+           var registros = JSON.parse(json);
+           alumno = {codigo:document.getElementById("codigo").value , nombre:document.getElementById("nombre").value, nota:document.getElementById("nota").value};
+           registros.push(alumno);
+           json = JSON.stringify(registros); 
+         }
 
-     tblBody = document.getElementById("tEstudiantes");
-     fila = document.createElement("tr");
+        tblBody = document.getElementById("tEstudiantes");
+        fila = document.createElement("tr");
     
-     insertaCelda("codigo",fila);
-     insertaCelda("nombre",fila);
-     insertaCelda("nota",fila);
+        insertaCelda("codigo",fila);
+        insertaCelda("nombre",fila);
+        insertaCelda("nota",fila);
 
-     tblBody.appendChild(fila);
+        tblBody.appendChild(fila);
 
-     document.getElementById("codigo").value = "";
-     document.getElementById("nombre").value = "";
-     document.getElementById("nota").value = "";
+        document.getElementById("codigo").value = "";
+        document.getElementById("nombre").value = "";
+        document.getElementById("nota").value = "";
       
-     return json   
+        return json 
+      } 
+     else 
+      {
+        alert("Verifique que todos los datos esten ingresado correctamente.");
+      }
    }
   catch (error)
    {
-     alert(error.message);
+     alert("Función cargarJSON, Error:\n" + error.message);
    }
-
 }
 
 
@@ -94,7 +129,6 @@ function calcularPromedio(json)
   
   try
    {
-
      tblBody = document.getElementById("tEstudiantes");
 
      if ( tblBody.outerHTML.includes('tr') ) //Para que no se muestre el promedio sin que se haya mostrado los datos de los alumnos.
@@ -110,18 +144,16 @@ function calcularPromedio(json)
         document.getElementById("promedio").innerHTML = prom ;
         alert("El promedio de todos los alumnos es: "+ prom);
       }
-    else
-     {
-      alert("Debe solicitar primero los datos de los alumnos");
-     } 
+     else
+      {
+        alert("Debe solicitar primero los datos de los alumnos");
+      } 
      
    }
-
   catch (error)
-    {
-      alert(error.message);
-    }
-
+   {
+     alert("Función calcularPromedio, Error:\n" + error.message);
+   }
 }
 
 
@@ -135,7 +167,7 @@ function mostrarPromedio()
 function mayorNota(json)
 {
   //Definicion de variables.
-	var i; //Variable de iteracion
+  var i; //Variable de iteracion
   var tblBody;  //Variable para situarse en el cuerpo de la tabla para luego ir adicionando las filas y sus respectivas celdas.
   var mayor; // Guarda el valor de la mayor nota.
   var fila; //Variable para guardar la fila a la que se le debe cambiar el formato para resaltar el dato a mostrar.
@@ -144,7 +176,6 @@ function mayorNota(json)
 
   try
    {
-
      tblBody = document.getElementById("tEstudiantes");
 
      if ( tblBody.outerHTML.includes('tr') ) //Para que no se muestre el promedio sin que se haya mostrado los datos de los alumnos.
@@ -158,38 +189,32 @@ function mayorNota(json)
             { mayor = registros[i].nota; }
          } 
 
-         texto = "La mayor nota es: " + mayor + "<br>";
-         texto += "Los alumnos con mayor nota son: <br>";
+         texto = "La mayor nota es: " + mayor + "\n";
+         texto += "Los alumnos con mayor nota son:\n";
 
         for(i = 0; i < registros.length; i++) 
          {
-
            fila = document.getElementsByTagName("tr")[i+1];
 
            if ( mayor == registros[i].nota )
             { 
               fila.outerHTML = fila.outerHTML.replace("<tr>",'<tr style="background-color:#73E3C7">'); 
-              texto += "Código: " + registros[i].codigo + "Nombre: " + registros[i].nombre + "<br>";
+              texto += "Código: " + registros[i].codigo + "     Nombre: " + registros[i].nombre + "\n";
             }
            else if (fila.outerHTML.includes('red'))
             { fila.outerHTML = fila.outerHTML.replace('<tr style="background-color:red">','<tr>');}
-         }
-
-        alert(texto);
-
+         }        
+        alert(texto); //Muestra en el alert los alumnos con mayor nota
       }
-    else
-     {
-      alert("Debe solicitar primero los datos de los alumnos");
-     } 
-
+     else
+      {
+        alert("Debe solicitar primero los datos de los alumnos");
+      } 
    }
-
   catch (error)
    {
-      alert(error.message);    
+     alert("Función mayorNota, Error:\n" + error.message);    
    }
-
 }
 
 
@@ -212,7 +237,6 @@ function menorNota(json)
 
   try
    {
-
      tblBody = document.getElementById("tEstudiantes");
 
      if ( tblBody.outerHTML.includes('tr') ) //Para que no se muestre el promedio sin que se haya mostrado los datos de los alumnos.
@@ -222,15 +246,14 @@ function menorNota(json)
          {
            if ( i == 0 )
             { menor = registros[i].nota; }
-           else if ( registros[i][i].nota < menor )
+           else if ( registros[i].nota < menor )
             { menor = registros[i].nota; }
-
          } 
 
-        texto = "La mayor menor es: " + menor + "<br>";
-        texto += "Los alumnos con menor nota son: <br>";
+        texto = "La mayor menor es: " + menor + "\n";
+        texto += "Los alumnos con menor nota son:\n";
 
-        for(i = 0; i < json.length; i++) 
+        for(i = 0; i < registros.length; i++) 
          {
            
            fila = document.getElementsByTagName("tr")[i+1];
@@ -238,25 +261,22 @@ function menorNota(json)
            if ( menor == registros[i].nota )
             { 
               fila.outerHTML = fila.outerHTML.replace("<tr>",'<tr style="background-color:red">'); 
-              texto += "Código: " + registros[i].codigo + "Nombre: " + registros[i].nombre + "<br>";
+              texto += "Código: " + registros[i].codigo + "     Nombre: " + registros[i].nombre + "\n";
             }
            else if (fila.outerHTML.includes('73E3C7'))
             { fila.outerHTML = fila.outerHTML.replace('<tr style="background-color:#73E3C7">','<tr>');}
          }
-
+        alert(texto); //Muestra en el alert los alumnos con menor nota
       }
      else
       {
         alert("Debe solicitar primero los datos de los alumnos");
       } 
-
-  }
-
+   }
   catch (error)
    {
-      alert(error.message);    
+     alert("Función menorNota, Error:\n" + error.message);    
    }
-	
 }
 
 
