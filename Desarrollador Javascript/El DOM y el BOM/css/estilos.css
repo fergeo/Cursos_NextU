@@ -13,10 +13,22 @@ h1
 
 form
 {
+  display: -webkit-flex;
+  -webkit-flex-direction: column;
   display: flex;
-  flex-direction: column; 
-  width: 200px;
+  flex-direction: column;
   padding: 10px 10px;
+}
+
+.inDatos
+{
+  padding: 4px;
+}
+
+.inDatos label
+{
+  text-align: left;
+  display: block;
 }
 
 label
@@ -48,6 +60,8 @@ table,thead, td, tr
 /*Contenedor que se utiliza para centrar la tabla*/
 .cTable
 {
+  display: -webkit-flex;
+  -webkit-flex-direction: row;
   display: flex;
   flex-direction: row;
   -webkit-justify-content: center;

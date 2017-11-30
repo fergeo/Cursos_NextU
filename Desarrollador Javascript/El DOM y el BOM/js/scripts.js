@@ -55,13 +55,42 @@ function verificaNota()
     }
 }
 
+//De existir registros anteriores borra las marcas de alumnos con mayor nota y menor nota y el promedio
+function limpiaMayorMenorPromedio(json,vtblBody)
+{
+  try
+   {
+     if ( vtblBody.outerHTML.includes('tr') ) //Para que no se muestre el promedio sin que se haya mostrado los datos de los alumnos.
+      {
+        var registros = JSON.parse(json);
+
+        if ( document.getElementById("promedio").value != "" )
+         { document.getElementById("promedio").innerHTML = ""; }
+
+        for(i = 0; i < registros.length; i++) 
+         {
+           fila = document.getElementsByTagName("tr")[i+1];
+
+           if (fila.outerHTML.includes('red'))
+            { fila.outerHTML = fila.outerHTML.replace('<tr style="background-color:red">','<tr>');}
+           else if (fila.outerHTML.includes('73E3C7'))
+            { fila.outerHTML = fila.outerHTML.replace('<tr style="background-color:#73E3C7">','<tr>');}
+         } 
+      }
+   }    
+  catch (error)
+   {
+     alert("Función limpiaMayorMenorPromedio, Error: " + error.message);
+   }       
+}
+
 
 //Función que va insertando los alumnos
 function cargarJSON(json)
 {
   var alumno;
   var fila; 
-  var tblBody; //Variable para situarse en el cuerpo de la tabla para luego ir adicionando las filas y sus respectivas celdas
+  var tblBody = document.getElementById("tEstudiantes"); //Variable para situarse en el cuerpo de la tabla para luego ir adicionando las filas y sus respectivas celdas
   
   try
    {
@@ -70,6 +99,8 @@ function cargarJSON(json)
               ( document.getElementById("nota").value != "" ) &&
                  verificaNota() ) 
       {
+        limpiaMayorMenorPromedio(json,tblBody);
+
         if (!json) 
          {
            var alumnos = [];
@@ -85,7 +116,6 @@ function cargarJSON(json)
            json = JSON.stringify(registros); 
          }
 
-        tblBody = document.getElementById("tEstudiantes");
         fila = document.createElement("tr");
     
         insertaCelda("codigo",fila);
@@ -102,6 +132,7 @@ function cargarJSON(json)
       } 
      else 
       {
+        return json;
         alert("Verifique que todos los datos esten ingresado correctamente.");
       }
    }
@@ -141,8 +172,8 @@ function calcularPromedio(json)
 
         prom = acum / i ; // Se divide por diez como ya se sabe de un principio que son 10 estudiantes.
 
-        document.getElementById("promedio").innerHTML = prom ;
-        alert("El promedio de todos los alumnos es: "+ prom);
+        document.getElementById("promedio").innerHTML = prom.toFixed(2) ;
+        alert("El promedio de todos los alumnos es: "+ prom.toFixed(2));
       }
      else
       {
@@ -173,6 +204,8 @@ function mayorNota(json)
   var fila; //Variable para guardar la fila a la que se le debe cambiar el formato para resaltar el dato a mostrar.
   var registros; //Vuelco el contenido del JSON
   var texto;
+  var textoAlumnos = "";
+  var cantMayor = 0;
 
   try
    {
@@ -190,7 +223,6 @@ function mayorNota(json)
          } 
 
          texto = "La mayor nota es: " + mayor + "\n";
-         texto += "Los alumnos con mayor nota son:\n";
 
         for(i = 0; i < registros.length; i++) 
          {
@@ -198,12 +230,37 @@ function mayorNota(json)
 
            if ( mayor == registros[i].nota )
             { 
-              fila.outerHTML = fila.outerHTML.replace("<tr>",'<tr style="background-color:#73E3C7">'); 
-              texto += "Código: " + registros[i].codigo + "     Nombre: " + registros[i].nombre + "\n";
+              cantMayor += 1;
+              if (!fila.outerHTML.includes('red'))
+               {
+                 fila.outerHTML = fila.outerHTML.replace("<tr>",'<tr style="background-color:#73E3C7">'); 
+                 textoAlumnos += "Código: " + registros[i].codigo + "     Nombre: " + registros[i].nombre + "\n";
+               }
+              else
+               {
+                 fila.outerHTML = fila.outerHTML.replace('<tr style="background-color:red">','<tr style="background-color:#73E3C7">'); 
+                 textoAlumnos += "Código: " + registros[i].codigo + "     Nombre: " + registros[i].nombre + "\n";
+               }
+              
             }
            else if (fila.outerHTML.includes('red'))
             { fila.outerHTML = fila.outerHTML.replace('<tr style="background-color:red">','<tr>');}
-         }        
+           else if (fila.outerHTML.includes('73E3C7'))
+            { fila.outerHTML = fila.outerHTML.replace('<tr style="background-color:#73E3C7">','<tr>');}
+         } 
+
+        
+         if ( cantMayor == 1 ) 
+          { 
+            texto += "El alumno con mayor nota es:\n"; 
+            texto += textoAlumnos;
+          }
+         else
+          { 
+            texto += "Los alumnos con mayor nota son:\n"; 
+            texto += textoAlumnos;
+          }
+
         alert(texto); //Muestra en el alert los alumnos con mayor nota
       }
      else
@@ -234,6 +291,8 @@ function menorNota(json)
   var fila;  //Variable para guardar la fila a la que se le debe cambiar el formato para resaltar el dato a mostrar.
   var registros;
   var texto;
+  var textoAlumnos = "";
+  var cantMenor = 0;
 
   try
    {
@@ -251,7 +310,6 @@ function menorNota(json)
          } 
 
         texto = "La mayor menor es: " + menor + "\n";
-        texto += "Los alumnos con menor nota son:\n";
 
         for(i = 0; i < registros.length; i++) 
          {
@@ -259,13 +317,37 @@ function menorNota(json)
            fila = document.getElementsByTagName("tr")[i+1];
 
            if ( menor == registros[i].nota )
-            { 
-              fila.outerHTML = fila.outerHTML.replace("<tr>",'<tr style="background-color:red">'); 
-              texto += "Código: " + registros[i].codigo + "     Nombre: " + registros[i].nombre + "\n";
+            {
+              cantMenor += 1;
+              if (!fila.outerHTML.includes('73E3C7'))
+               {
+                 fila.outerHTML = fila.outerHTML.replace("<tr>",'<tr style="background-color:red">'); 
+                 textoAlumnos += "Código: " + registros[i].codigo + "     Nombre: " + registros[i].nombre + "\n";
+               }
+              else
+               {
+                 fila.outerHTML = fila.outerHTML.replace('<tr style="background-color:#73E3C7">','<tr style="background-color:red">'); 
+                 textoAlumnos += "Código: " + registros[i].codigo + "     Nombre: " + registros[i].nombre + "\n";
+               }
             }
            else if (fila.outerHTML.includes('73E3C7'))
             { fila.outerHTML = fila.outerHTML.replace('<tr style="background-color:#73E3C7">','<tr>');}
+           else if (fila.outerHTML.includes('red'))
+            { fila.outerHTML = fila.outerHTML.replace('<tr style="background-color:red">','<tr>');}
          }
+
+        
+        if ( cantMenor == 1 ) 
+         { 
+           texto += "El alumno con menor nota es:\n"; 
+           texto += textoAlumnos;
+         }
+        else
+         { 
+           texto += "Los alumnos con menor nota son:\n"; 
+           texto += textoAlumnos;
+         }
+
         alert(texto); //Muestra en el alert los alumnos con menor nota
       }
      else
