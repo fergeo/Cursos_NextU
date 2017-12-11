@@ -1,52 +1,67 @@
-html
-{
-  background-color: #0F42D1; 
-}
-
 .music-body 
 {
-  background: url(../img/fondo.jpg);
-  background-repeat: no-repeat;
-  background-position: center center;
-  background-size: cover;
-  width: 100%;
-  height: 100%;
+   background-color: #0F42D1;
 }
 
-.navbar-inverse 
+
+.cabeceraMusic
 {
   background-color: rgba(8, 45, 94, 0.95);
-  min-height: 10%;
-  border: none;
 }
 
-.menu-navbar
-{
-  background-color: #4040A6;
-  text-align: center;
-  padding: 8px;
-}
-
-.navbar-btn:hover
-{
-  background-color: white;
-}
-
-.navbar-btn:hover a
-{
-  text-decoration: none;
-}
 
 .logo-img 
 {
   width: 300px;
+  padding: 20px 0px;
 }
+
+
+.redes
+{
+  margin-bottom: 20px;
+  margin-right: 15px;
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
 
 .img-social 
 {
   width: 40px;
   height: 40px;
 }
+
+
+.menu-navbar
+{
+  background-color: #4040A6;
+  text-align: center;
+  padding: inherit !important;
+  margin: inherit !important;
+}
+
+
+
+.navbar-btn:hover
+{
+  background-color: white;
+}
+
+
+.navbar-btn:hover a
+{
+  text-decoration: none;
+}
+
+
+.row
+{
+  margin: inherit !important;
+}
+
 
 .contenido-column
 {
@@ -71,13 +86,13 @@ html
 .img-column
 {
   text-align: center;
-  padding: 150px 0px;  
+  padding: 50px 0px;  
 }
 
 .img-concert
 {
-  height: 300px;
-  width: 240px;
+  height: 400px;
+  width: 100%;
 }
 
 .col-ico-coment
@@ -140,31 +155,92 @@ html
 
 
 /*MEDIA QUERY*/
-@media (max-width: 770px) 
+@media (max-width: 1310px) 
 {
+
+  .img-concert
+    {
+      height: 300px;
+    }
+}
+
+
+
+@media (max-width: 1125px) 
+{
+
+  .img-concert
+    {
+      height: 300px;
+    }
+}
+
+
+@media (max-width: 996px) 
+{
+
+  .img-concert
+    {
+      height: 500px;
+      padding: 150px 0px;
+    }
+}
+
+
+@media (max-width: 772px) 
+{
+
+.redes
+{
+  margin-bottom: 20px;
+  margin-right: 15px;
+  text-align: right;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+ .img-concert
+  {
+    height: 200px;
+    padding: 10px 0px;
+  }
+
+}
+
+
+@media (max-width: 768px) 
+{
+
+ .redes
+  {
+    position:static !important;
+    text-align: center; 
+  }
 
  .menu-navbar
   {
-   display: -webkit-flex;
-   display: flex;
-   flex-direction: column;
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
   }
 
  .navbar-btn
   {
-   width: 100%;
+    width: 100%;
   }
 
  .img-column
   {
-   text-align: center;
-   padding: 10px 0px;  
+    text-align: center;
+    padding: 10px 0px;  
   }
 
  .img-concert
   {
-   height: 300px;
-   width: 350px;
+    height: 300px;
+    width: 350px;
+    padding: 10px 0px;
   }
 
 }
