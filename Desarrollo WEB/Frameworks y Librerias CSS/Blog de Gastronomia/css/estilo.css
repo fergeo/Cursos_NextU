@@ -6,8 +6,8 @@
 
 .grid-container
 {
-  background: transparent; 
-  background-color: #EBCAAA;
+  background-color: rgb(235, 202, 170);
+  /*opacity: 0.5;*/
 }
 
 .Title, .Slogan
@@ -24,6 +24,29 @@
 {
   background-color: #FFCC99;
 }
+
+
+/*Search Box*/
+.animated-search-form[type=search] {
+  width: 10rem;
+  border: 0.125rem solid #e6e6e6;
+  box-shadow: 0 0 3.125rem rgba(0, 0, 0, 0.18);
+  border-radius: 0;
+  /*background-image: url('//image.ibb.co/i7NbrQ/search_icon_15.png');*/
+  background-position: 0.625rem 0.625rem;
+  background-repeat: no-repeat;
+  padding: 0.75rem 1.25rem 0.75rem 2rem;
+  margin: 10px;
+  width: 100%;
+}
+
+
+.thumbnail
+{
+  height: 100px;
+  width: 100px;
+}
+
 
 .img-primera , .img-segunda
 {
