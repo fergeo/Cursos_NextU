@@ -7,18 +7,35 @@
 .grid-container
 {
   background-color: rgb(235, 202, 170);
-  /*opacity: 0.5;*/
 }
 
-.Title, .Slogan
+
+.title, .slogan
 {
   text-align: right;
 }
 
+
+.slogan
+{
+  padding-bottom: 5px;
+  border-bottom: 1px solid gray;
+}
+
+.div-title, .div-slogan
+{
+  margin-left: 15px;
+  padding-right: 10px;
+  border-right: 1px solid gray;
+}
+
+
 .left-panel
 {
   background-color: #B4C7E0;
+  width: 28% !important;
 }
+
 
 .right-panel
 {
@@ -26,35 +43,104 @@
 }
 
 
-/*Search Box*/
-.animated-search-form[type=search] {
-  width: 10rem;
-  border: 0.125rem solid #e6e6e6;
-  box-shadow: 0 0 3.125rem rgba(0, 0, 0, 0.18);
-  border-radius: 0;
-  /*background-image: url('//image.ibb.co/i7NbrQ/search_icon_15.png');*/
-  background-position: 0.625rem 0.625rem;
-  background-repeat: no-repeat;
-  padding: 0.75rem 1.25rem 0.75rem 2rem;
+.left-panel, .right-panel
+{
   margin: 10px;
-  width: 100%;
+  padding-left: 10px !important;
+  padding-right: 10px !important;
 }
 
 
-.thumbnail
+/*Search Box*/
+.buscador .form-icons .input-group-label 
+{
+  background-color: #1779ba;
+  border-color: #1779ba;
+}
+
+
+.buscador .form-icons .input-group-field 
+{
+  border-color: #1779ba;
+}
+
+
+.buscador .form-icons .fa 
+{
+  color: white;
+  width: 1rem;
+}
+
+
+.favoritos .thumbnail
 {
   height: 100px;
   width: 100px;
 }
 
 
-.img-primera , .img-segunda
+.favoritos, .historial
 {
-  width: 100%;
+  margin: 10px 5px 10px 5px !important;
+}
+
+
+.img-titular
+{
+  width: 90%;
   text-align: center;
 }
+
 
 .input-group
 {
   padding: 10px 10px;
+}
+
+
+.comment-button
+{
+  float: right;
+}
+
+
+.primer-titular
+{
+  margin: 5px 5px 15px 5px !important;
+}
+
+
+.primer-seccion
+{
+  border-bottom: 1px solid gray;
+}
+
+
+.primer-titular, .segundo-titular
+{
+  padding: 0px 5px 0px 5px !important;
+  border-radius: 2px;
+}
+
+
+.segundo-titular
+{
+  margin: 0px 5px 0px 5px !important;
+}
+
+
+.comentarios
+{
+  margin: 5px !important;
+}
+
+
+.des-coment
+{
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+  margin: 5px !important;
+  border-radius: 5px;
+  border: 1px solid gray;
 }
