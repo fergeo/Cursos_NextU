@@ -1,3 +1,8 @@
+body
+{
+  color: pink;
+}
+
 .gourmet-body
 {
   background-image: url(../img/background-image.jpg);
@@ -6,7 +11,7 @@
 
 .grid-container
 {
-  background-color: rgb(235, 202, 170);
+  background-color: rgba(255, 74, 171, 0.32);
 }
 
 
@@ -19,27 +24,28 @@
 .slogan
 {
   padding-bottom: 5px;
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid black;
 }
 
 .div-title, .div-slogan
 {
   margin-left: 15px;
   padding-right: 10px;
-  border-right: 1px solid gray;
+  border-right: 1px solid black;
 }
 
 
 .left-panel
 {
-  background-color: #B4C7E0;
-  width: 28% !important;
+  background-color: rgba(255, 157, 171, 0.55);
+  width: 30% !important;
+  height: 100%;
 }
 
 
-.right-panel
+div.right-panel
 {
-  background-color: #FFCC99;
+  background-color: rgba(255, 122, 171, 0.55);
 }
 
 
@@ -72,6 +78,12 @@
 }
 
 
+.button
+{
+  background-color: #F4A460 !important;
+}
+
+
 .favoritos .thumbnail
 {
   height: 100px;
@@ -87,7 +99,7 @@
 
 .img-titular
 {
-  width: 90%;
+  width: 100%;
   text-align: center;
 }
 
@@ -104,21 +116,14 @@
 }
 
 
-.primer-titular
-{
-  margin: 5px 5px 15px 5px !important;
-}
-
-
 .primer-seccion
 {
-  border-bottom: 1px solid gray;
+  border-bottom: 1px solid black;
 }
 
 
 .primer-titular, .segundo-titular
 {
-  padding: 0px 5px 0px 5px !important;
   border-radius: 2px;
 }
 
@@ -135,12 +140,24 @@
 }
 
 
+.avatar
+{
+  width: 20px !important;
+  height: 20px !important;
+}
+
 .des-coment
 {
   display: -webkit-flex;
   display: flex;
   flex-direction: column;
+  padding: 10px 0px 0px 10px;
   margin: 5px !important;
   border-radius: 5px;
-  border: 1px solid gray;
+  border: 1px solid black;
+}
+
+.des-coment a
+{
+  color: #740023;
 }
