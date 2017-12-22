@@ -11,7 +11,7 @@ body
 
 .grid-container
 {
-  background-color: rgba(255, 74, 171, 0.32);
+  background-color: rgba(255, 74, 171, 0.5);
 }
 
 
@@ -37,7 +37,7 @@ body
 
 .left-panel
 {
-  background-color: rgba(255, 157, 171, 0.55);
+  background-color: rgba(255, 157, 171, 0.7);
   width: 30% !important;
   height: 100%;
 }
@@ -45,7 +45,7 @@ body
 
 div.right-panel
 {
-  background-color: rgba(255, 122, 171, 0.55);
+  background-color: rgba(255, 122, 171, 0.7);
 }
 
 
@@ -116,7 +116,7 @@ div.right-panel
 }
 
 
-.primer-seccion
+.primer-seccion, .segunda-seccion
 {
   border-bottom: 1px solid black;
 }
@@ -125,12 +125,6 @@ div.right-panel
 .primer-titular, .segundo-titular
 {
   border-radius: 2px;
-}
-
-
-.segundo-titular
-{
-  margin: 0px 5px 0px 5px !important;
 }
 
 
