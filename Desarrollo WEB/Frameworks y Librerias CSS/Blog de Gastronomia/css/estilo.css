@@ -1,17 +1,36 @@
+img.bg 
+{
+  min-height: 100%;
+  min-width: 1024px;
+  width: 100%;
+  height: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+}
+
+
+#page-wrap 
+{
+  position: relative;
+  margin: 50px auto;
+  padding: 20px;
+  -moz-box-shadow: 0 0 20px black;
+  -webkit-box-shadow: 0 0 20px black;
+  box-shadow: 0 0 20px black;
+}
+
+
 body
 {
   color: pink;
 }
 
-.gourmet-body
-{
-  background-image: url(../img/background-image.jpg);
-  background-size: 100vh 100vh;  
-}
 
 .grid-container
 {
   background-color: rgba(255, 74, 171, 0.5);
+  display: block;
 }
 
 
@@ -37,24 +56,16 @@ body
 
 .left-panel
 {
-  background-color: rgba(255, 157, 171, 0.7);
-  width: 30% !important;
+  background-color: rgba(255, 157, 171, 0.7); 
   height: 100%;
 }
 
 
-div.right-panel
+.right-panel
 {
   background-color: rgba(255, 122, 171, 0.7);
 }
 
-
-.left-panel, .right-panel
-{
-  margin: 10px;
-  padding-left: 10px !important;
-  padding-right: 10px !important;
-}
 
 
 /*Search Box*/
@@ -104,9 +115,15 @@ div.right-panel
 }
 
 
-.input-group
+.input-group, .button-group
 {
   padding: 10px 10px;
+}
+
+
+.button
+{
+  border-radius: 5px;
 }
 
 
@@ -116,15 +133,33 @@ div.right-panel
 }
 
 
+.left-panel, .panel-derecho
+{
+  margin-top: 10px;
+}
+
+
+.primer-titular
+{
+  margin-bottom: 10px !important;
+}
+
+
 .primer-seccion, .segunda-seccion
 {
   border-bottom: 1px solid black;
 }
 
 
-.primer-titular, .segundo-titular
+.left-panel, .primer-titular, .segundo-titular
 {
-  border-radius: 2px;
+  border-radius: 10px;
+}
+
+
+.titular
+{
+  margin: 10px;
 }
 
 
@@ -154,4 +189,14 @@ div.right-panel
 .des-coment a
 {
   color: #740023;
+}
+
+
+@media screen and (max-width: 1024px) 
+{
+  img.bg 
+   {
+     left: 50%;
+     margin-left: -512px;
+   }
 }

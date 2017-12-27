@@ -14,24 +14,25 @@
     <link rel="stylesheet" href="css/estilo.css">   
   </head>
   <body class="gourmet-body">
-    <div class="grid-x grid-padding-x grid-container">
-      <div class="large-12">
+    <img src="img/background-image.jpg" alt="" class="bg">
+    <div class="grid-x grid-padding-x grid-container" id="page-wrap">
+      <div class="large-12 medium-12">
         <!--TITULO-->
-        <div class="grid-x grid-padding-x title">
-          <div class="large-4 cell div-title">
+        <div class="grid-x title show-for-medium">
+          <div class="large-4 medium-4 cell div-title">
             <h1>Gourmet Hoy</h1>
           </div>
         </div>
         <!--SLOGAN-->
-        <div class="grid-x grid-padding-x slogan">
-          <div class="large-4 cell div-slogan">
+        <div class="grid-x slogan show-for-medium">
+          <div class="large-4 medium-4 cell div-slogan">
             <p>Donde el buen sabor y el conocimiento por la cocina se junta</p>
           </div>
         </div>
         <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-        <div class="grid-x grid-padding-x principal">
+        <div class="grid-x principal">
           <!--BUSCADOR, NAVEGACION, FAVORITOS, HISTORIAL-->
-          <div class="large-4 medium-12 small-12 cell left-panel">
+          <div class="large-4 medium-4 cell left-panel show-for-medium">
             <!--BUSCADOR-->
             <div class="input-group">
               <span class="input-group-label">
@@ -48,30 +49,30 @@
             </div>
             <!--FAVORITOS-->
             <h5>FAVORITOS:</h5>
-            <div class="grid-x grid-padding-x favoritos">
-              <div class="large-4 medium-12 small-12 cell">
+            <div class="grid-x favoritos">
+              <div class="large-4 medium-4 cell">
                 <img src="img/entradas.jpg" alt="Entradas" class="favoritos thumbnail"/>
               </div>
-              <div class="large-4 medium-12 small-12 cell">
+              <div class="large-4 medium-4 cell">
                 <img src="img/plato-principal.jpg" alt="Platos Principales" class="favoritos thumbnail"/>
               </div>
-              <div class="large-4 medium-12 small-12 cell">
+              <div class="large-4 medium-4 cell">
                 <img src="img/postres.jpg" alt="Postres" class="favoritos thumbnail"/>
               </div>
             </div>
-            <div class="grid-x grid-padding-x favoritos">
-              <div class="large-4 medium-12 small-12 cell">
+            <div class="grid-x favoritos">
+              <div class="large-4 medium-4 cell">
                 <img src="img/mariscos.jpg" alt="Mariscos" class="favoritos thumbnail"/>
               </div>
-              <div class="large-4 medium-12 small-12 cell">
+              <div class="large-4 medium-4 cell">
                 <img src="img/sopas.jpg" alt="Sopas" class="favoritos thumbnail"/>
               </div>
-              <div class="large-4 medium-12 small-12 cell">
+              <div class="large-4 medium-4 cell">
                 <img src="img/carnes.jpg" alt="Carnes" class="favoritos thumbnail"/>
               </div>
             </div>
             <!--HISTORIAL-->
-            <div class="grid-x grid-padding-x historial">
+            <div class="grid-x historial">
               <div class="cell">
                 <h5>HISTORIAL:</h5>
                  <div class="top-bar-right show-for-medium">
@@ -89,29 +90,31 @@
           </div>
           <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
           <!-- PANEL DERECHO - TITULARES -->
-          <div class="large-8 cell">
-            <div class="grid-x grid-padding-x"> 
+          <div class="large-8 medium-8 cell panel-derecho">
+            <div class="grid-x"> 
               <div class="large-12 cell right-panel primer-titular">
                 <!--PRIMER TITULAR-->
                 <div class="grid-x primer-seccion">
                   <div class="large-12 cell">
-                    <h2>PECHUGAS DE POLLO EN SALSA DE QUESO</h2>
-                    <h6 class="subheader">10 de Diciembre 2017</h6>
-                    <img src="img/receta-pollo.jpg" class="img-titular thumbnail">
-                    <p>
-                      Recetas faciles de cocina con pollo. Cenas y Comidas rapidas y ricas: Como hacer pollo en crema de queso. Algo delicioso de hacer. La salsa de queso es muy fácil de hacer y siempre queda espectacular. Si sobra puedes mezclarla con alguna pasta. Una sencilla y deliciosa comida rapida y facil de hacer en casa que seguro triunfa en fiestas y para niños.
-                      ¡Que no te falten ideas para preparar platos salados rapidos para almuerzos y cenas!
-                    </p>
-                    <!--COMENTARIOS-->
-                    <label>Escribe tu comentario:
-                      <textarea class="comentario"></textarea>
-                    </label>                           
-                    <a href="#" class="button round comment-button"><i class="fi-pencil"></i>Publicar</a>
+                    <div class="titular">
+                      <h2>PECHUGAS DE POLLO EN SALSA DE QUESO</h2>
+                      <h6 class="subheader">10 de Diciembre 2017</h6>
+                      <img src="img/receta-pollo.jpg" class="img-titular thumbnail">
+                      <p>
+                        Recetas faciles de cocina con pollo. Cenas y Comidas rapidas y ricas: Como hacer pollo en crema de queso. Algo delicioso de hacer. La salsa de queso es muy fácil de hacer y siempre queda espectacular. Si sobra puedes mezclarla con alguna pasta. Una sencilla y deliciosa comida rapida y facil de hacer en casa que seguro triunfa en fiestas y para niños.
+                        ¡Que no te falten ideas para preparar platos salados rapidos para almuerzos y cenas!
+                      </p>
+                      <!--COMENTARIOS-->
+                      <label>Escribe tu comentario:
+                        <textarea class="comentario"></textarea>
+                      </label>                           
+                      <a href="#" class="button round comment-button"><i class="fi-pencil"></i>Publicar</a>                     
+                    </div>
                   </div>
                 </div>
                 <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
                 <!--COMENTARIOS AGREGADOS-->
-                <div class="grid-x grid-padding-x comentarios">
+                <div class="grid-x comentarios">
                   <div class="large-12 cell">
                     <!--PRIMER COMENTARIO, PRIMERA SECCION-->
                     <div class="des-coment">
@@ -134,31 +137,33 @@
                   </div>
                 </div> <!--CIERRA HISTORIAL DE COMENTARIOS-->   
               </div> <!--CIERRA PRIMER TITULAR CON SUS COMENTARIOS-->
-              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+              <!--+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
               <!--SEGUNDO TITULAR-->
               <div class="large-12 cell right-panel segundo-titular">
                 <div class="grid-x segunda-seccion">
                   <div class="large-12 cell">
-                    <h2>PALANCA A LA PARRILLA</h2>
-                    <h6 class="subheader">2 de Noviembre 2017</h6>
-                    <img src="img/receta-carne.jpg" class="img-titular thumbnail">
-                    <p>
-                      Una hora antes de preparar la carne, mezclar todos los ingredientes para aliño y adobar la carne por todos lados.
-                      Prender la parrilla.
-                      Aliñar la carne con sal de mar y cocinar por ambos lados
-                      La carne se demora dependiendo de su grosor: 20 minutos cada lado para palancas gruesas (5 a 6 cm); 15 minutos cada lado para intermedias (4 cm) y 10 minutos para delgadas (menos de 4 cm).
-                      No debe asarse en exceso ya que la carne quedará muy dura.
-                      Una vez lista, sacar de la parrilla y dejar reposar en la tabla por unos 3 a 5 minutos antes de cortar.
-                    </p>
-                    <!--COMENTARIOS-->
-                    <label>Escribe tu comentario:
-                      <textarea class="comentario"></textarea>
-                    </label>
-                    <a href="#" class="button round comment-button"><i class="fi-pencil"></i>Publicar</a>
+                    <div class="titular">
+                      <h2>PALANCA A LA PARRILLA</h2>
+                      <h6 class="subheader">2 de Noviembre 2017</h6>
+                      <img src="img/receta-carne.jpg" class="img-titular thumbnail">
+                      <p>
+                        Una hora antes de preparar la carne, mezclar todos los ingredientes para aliño y adobar la carne por todos lados.
+                        Prender la parrilla.
+                        Aliñar la carne con sal de mar y cocinar por ambos lados
+                        La carne se demora dependiendo de su grosor: 20 minutos cada lado para palancas gruesas (5 a 6 cm); 15 minutos cada lado para intermedias (4 cm) y 10 minutos para delgadas (menos de 4 cm).
+                        No debe asarse en exceso ya que la carne quedará muy dura.
+                        Una vez lista, sacar de la parrilla y dejar reposar en la tabla por unos 3 a 5 minutos antes de cortar.
+                      </p>
+                      <!--COMENTARIOS-->
+                      <label>Escribe tu comentario:
+                        <textarea class="comentario"></textarea>
+                      </label>
+                      <a href="#" class="button round comment-button"><i class="fi-pencil"></i>Publicar</a>                      
+                    </div>
                   </div>
                 </div>
                 <!--COMENTARIOS AGREGADOS-->
-                <div class="grid-x grid-padding-x comentarios">
+                <div class="grid-x comentarios">
                   <div class="large-12 cell">
                     <!--PRIMER COMENTARIO, PRIMERA SECCION-->
                     <div class="des-coment">
