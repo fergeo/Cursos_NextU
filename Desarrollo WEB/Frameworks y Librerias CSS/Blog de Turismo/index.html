@@ -7,9 +7,52 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <!--Importar la hojas de estilos de materialize css-->
     <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-    <title>Mi primer página con Materialize CSS</title>
+    <link href="css/index.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <link href="css/estilos.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+    <title>Blog de Turismo</title>
   </head>
   <body>
+    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+    <div class="row">
+      <div class="s12 col grey darken-3 barra-superior">
+        <img src="img/logo.jpeg" alt="Logo" class="brand-logo left">
+        <ul class="right">
+          <li class="btn blue darken-3 active"><a href="#"><i class="material-icons left">home</i> Inicio</a></li>
+          <li class="btn blue darken-3"><a href="#"><i class="material-icons left">place</i> Lugares Destacados</a></li>
+          <li class="btn blue darken-3"><a href="#"><i class="material-icons left">local_airport</i> Tours</a></li>
+          <li class="btn blue darken-3"><a href="#"><i class="material-icons left">call</i> Reservas</a></li>
+        </ul>
+        <h3>Elige tus proximas vacaiones</h3>
+      </div>
+      <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
+      <div class="s2 m2 l2 col blue-grey lighten-5 columna-grupos push-s10">
+        <ul>
+          <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
+        </ul>
+      </div>
+      <div class="s10 m7 l7 col white columna-principal pull-s2">
+        <div class="row">
+          <div class="s12 m12 l8 col white columna-publicaciones">
+            <h5>Columna para las publicaciones</h5>
+          </div>
+          <div class="l3 offset-l1 col white columna-news hide-on-med-and-down">
+            <h5>Columna para las noticias</h5>
+          </div>
+        </div>
+      </div>
+      <div class="m3 l3 col white columna-chat hide-on-small-only">
+        <div class="row">
+          <div class="s12 col blue-grey bloque-feed">
+            <h5>Bloque para las actividades recientes</h5>
+          </div>
+          <div class="s12 col grey lighten-1 bloque-chat">
+            <h5>Bloque para el chat</h5>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script type="text/javascript" src="js/materialize.min.js"></script>
   </body>
