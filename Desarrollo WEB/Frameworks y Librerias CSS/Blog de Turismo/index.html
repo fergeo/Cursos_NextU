@@ -13,7 +13,7 @@
   </head>
   <body>
     <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
-    <!--<img class="bck-img"  src="img/background.jpg">  IMAGEN DE FONDO-->
+    <!--<img class="bck-img"  src="img/background.jpg">-->  
     <div class="container">     
       <div class="row"> <!-- LOGO, NAVBAR Y SLOGAN -->
         <!--LOGO-->
@@ -45,30 +45,39 @@
       <div class="row"> <!-- SECCION REDES SOCIALES Y GALERIA --> 
         <!-- REDES SOCIALES -->
         <div class="l1 col social-networks">
-          <ul>
-            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-            <li><a href="#"><i class="fa fa-pinterest"></i></a></li>
-          </ul>
+          <div class="collection">
+            <a class="collection-item">
+              <img src="ico/twitter.svg">
+            </a>
+            <a class="collection-item">
+              <img src="ico/facebook.svg">
+            </a>
+            <a class="collection-item">
+              <img src="ico/instagram.svg">
+            <a class="collection-item">
+              <img src="ico/youtube.svg">
+            </a>
+            <a class="collection-item">
+              <img src="ico/google.svg">
+            </a>
+          </div>
         </div> 
         <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
         <!-- GALERIA DE IMAGENES -->
         <div class="l11 col">
           <div class="row">
             <div class="l4 col galeria">
-              <img src="img/casaRosada1.jpg" class="responsive-img"/>
-              <img src="img/casaRosada2.jpg" class="responsive-img"/>
-              <img src="img/casaRosada3.jpg" class="responsive-img"/>
+              <img src="img/casaRosada1.jpg" class="responsive-img z-depth-5"/>
+              <img src="img/casaRosada2.jpg" class="responsive-img z-depth-5"/>
+              <img src="img/casaRosada3.jpg" class="responsive-img z-depth-5"/>
               </div>
             <div class="l4 col galeria">
-              <img src="img/obelisco.jpg" class="responsive-img"/>
+              <img src="img/obelisco.jpg" class="responsive-img z-depth-5"/>
             </div>
             <div class="l4 col galeria">
-              <img src="img/costaneraBA1.jpg" class="responsive-img"/>
-              <img src="img/costaneraBA2.jpg" class="responsive-img"/>
-              <img src="img/costaneraBA3.jpg" class="responsive-img"/>
+              <img src="img/costaneraBA1.jpg" class="responsive-img z-depth-5"/>
+              <img src="img/costaneraBA2.jpg" class="responsive-img z-depth-5"/>
+              <img src="img/costaneraBA3.jpg" class="responsive-img z-depth-5"/>
             </div>
           </div>
         </div>
@@ -85,7 +94,7 @@
             <h1>Teatro Colón de Buenos Aires</h1>
             <blockquote>Esta es una prueba de cita textual con formato Materialize.</blockquote>
             <p>
-              El Teatro Colón es un teatro de ópera de la ciudad de Buenos Aires. Por su tamaño, acústica1​ y trayectoria, está considerado uno de los cinco mejores del mundo.2​ Según una encuesta realizada por el experto en acústica Leo Beranek a destacados directores internacionales de ópera y de orquesta, el Teatro Colón posee la sala con la mejor acústica para ópera y la segunda mejor para conciertos del mundo.3​
+              El Teatro Colón es un teatro de ópera de la ciudad de Buenos Aires. Por su tamaño, acústica1​ y trayectoria, está considerado uno de los cinco mejores del mundo.2​ Según una encuesta realizada por el experto en acústica Leo Beranek a destacados directores internacionales de ópera y de orquesta, el Teatro Colón posee la sala con la mejor acústica para ópera y la segunda mejor para conciertos del mundo.
 
               Comparable con las salas líricas más importantes del mundo, como la Scala de Milán, la Metropolitan Opera House de New York, la Ópera Estatal de Viena, la Royal Opera House (Covent Garden) de Londres y la Ópera de París, es índice inequívoco de consagración para quienes se presentan en él y lugar ineludible para los amantes de la música. El Colón ha sido desde siempre un teatro venerado por el público y por los artistas más renombrados.4​ A su vez, es sede de la Orquesta Estable, el Coro Estable, el Ballet Estable del Teatro Colón y de la Orquesta Filarmónica de Buenos Aires. También funcionan en su sede el Centro de Experimentación del Teatro Colón, el Instituto Superior de Arte, con su Orquesta Académica, el Coro de Niños y el programa Colón Contemporáneo.
             </p>
@@ -97,6 +106,7 @@
           <h4 class="center-align">Conociendo al autor del Blog</h4>
           <p class="center-align">
             Mi nombre es Andrew McMillam tengo 35 años, ¿de donde? si bien nacido en Buenos Aires, Argentina. Pero hara cosa de 10 años que no tengo un domicilio establecido, ya que cansado de la rutina me dedique a viajar primero empesando por los paises limitrofes como ser Uruguay, Paraguay, Chile, Bolivia y Brasil. Todo empezo con la idea de conocer nuevos lugares y cada vez mas el vicio de viajgar se me adentraba asi que empce a vijar cada vez a mayor distancia de Argentina y cada vez por mas tiempo.
+
             Luego de viajar por tantas partes del mundo, conocer tanta gente de diferentes culturas y de diferentes comportamientos, pero todas confluian en algo a la hora de viajar todos querian tener la mayor información de donde ivan o por lo menos saber que lugares se podria adaptar mas a sus gustos y personalidades dado por esto que decidi crear este Blog.
           </p>
         </div>          
@@ -104,21 +114,21 @@
       <!--++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++-->
       <!--COMENTARIO-->
       <div class="row">
-        <form class="col blue l8">
+        <form class="l8 col">
           <div class="row">
-            <div class="input-field col s6">
+            <div class="input-field l6 m6 s6 col">
               <i class="material-icons prefix">account_circle</i>
               <input id="icon_prefix" type="text" class="validate">
               <label for="icon_prefix">Nombre:</label>
             </div>
-            <div class="input-field col s6">
+            <div class="input-field l6 m6 s6 col">
               <i class="material-icons prefix">email</i>
               <input id="email" type="email" class="validate">
               <label for="email">Correo Electornico:</label>
             </div>
           </div>
           <div class="row">
-            <div class="input-field col s12">
+            <div class="input-field l12 m12 s12 col">
               <i class="material-icons prefix">comment</i>
               <textarea id="textarea1" class="materialize-textarea"></textarea>
               <label for="textarea1">Comentario</label>
