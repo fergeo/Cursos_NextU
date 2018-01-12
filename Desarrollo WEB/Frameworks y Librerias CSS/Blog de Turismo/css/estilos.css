@@ -1,3 +1,17 @@
+body
+{
+  color: white;
+}
+
+.fondo1
+{
+  width: 100%;
+  height: 150px;
+  position: fixed;
+  background-color: grey;
+}
+
+
 img.bck-img
 {
   min-height: 100%;
@@ -5,14 +19,26 @@ img.bck-img
   width: 100%;
   height: auto;
   position: fixed;
-  top: 0;
+  top: 150px;
   left: 0;
 }
 
 
 .container
 {
-  width: 90% !important;
+  width: 100% !important;
+}
+
+
+.slogan
+{
+  margin-top: 10px;
+}
+
+
+.brand-logo, .navegacion, .slogan, .galeria, .entrada-blog, .perfil-autor
+{
+  position: relative;
 }
 
 
@@ -51,15 +77,32 @@ ul
 }
 
 
-@media screen and (max-width: 1024px) 
+.card
 {
-  .bck-img 
-   {
-     left: 50%;
-     margin-left: -512px;
-   }
+  background-color: blue;
 }
 
 
+.card-image
+{
+  padding: 10px 10px 0px 10px;
+}
 
 
+img.img-entrada
+{
+  display: inline-block;
+  width: 100% ;
+  margin-top: 10px;
+  margin-bottom: 1rem;
+  border: solid 4px #fefefe;
+  border-radius: 0;
+  box-shadow: 0 0 0 1px rgba(10,10,10,.2);
+  line-height: 0;
+}
+
+
+p
+{
+  text-align: justify;
+}
