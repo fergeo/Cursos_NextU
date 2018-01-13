@@ -24,21 +24,15 @@ img.bck-img
 }
 
 
-.container
+.contenedor
 {
-  width: 100% !important;
+  position: relative;
 }
 
 
 .slogan
 {
   margin-top: 10px;
-}
-
-
-.brand-logo, .navegacion, .slogan, .galeria, .entrada-blog, .perfil-autor
-{
-  position: relative;
 }
 
 
@@ -51,12 +45,6 @@ img.bck-img
 }
 
 
-h3
-{
-  color: white;
-}
-
-
 ul
 {
   margin-top: 50px;
@@ -64,22 +52,32 @@ ul
 }
 
 
-.collection-item
+.social-networks
 {
-  text-align: center;
-  padding: inherit !important;
+  height: 100%;
 }
 
-.collection-item img
+
+.socials
 {
-  width: 63px;
-  height: 63px;
+  width: 100%;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  text-align: center;
+  border: 1px solid #E0E0E0;
+  border-radius: 10px;
+}
+
+
+.blue img
+{
+  width: 90%;
 }
 
 
 .card
 {
-  background-color: blue;
+  background-color: #1565C0;
 }
 
 
@@ -102,7 +100,41 @@ img.img-entrada
 }
 
 
+.circle
+{
+  margin-top: 10px !important;
+}
+
+
 p
 {
   text-align: justify;
+}
+
+
+@media only screen and (max-width: 600px) 
+{
+  .brand-logo 
+    {
+      text-align: center !important;
+    }
+
+  i.left
+    {
+      margin-right: 0px !important;
+    }
+
+  .entrada-perfil-coment 
+    {
+      display: flex;
+      flex-direction: column;
+    }
+
+
+
+  .perfil-autor
+    {
+      order: 3;
+    }
+
 }
