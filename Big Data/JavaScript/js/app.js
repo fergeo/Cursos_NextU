@@ -5,11 +5,16 @@ var Calculadora = {
 	ingresaNumero: function(num) {
 								   var display = document.getElementById("display").innerHTML;
 
-								   if (display.length < 8)
+									 if ( display.length == 1 && display == "0")
+									 	{
+									 		this.numero = num ;
+											document.getElementById('display').innerHTML = this.numero;
+									 	}
+								   else if (display.length < 8)
 								    {
-								      if ((display == 0 && num != 0) || (display != 0 && num == 0) || (display != 0 && num != 0))
+								      if ((display == "0" && num != "0") || (display != "0" && num == "0") || (display != "0" && num != "0"))
     	                          	   {
-    	                                 this.numero =  this.numero + num ;
+    	                                 this.numero = this.numero + num.toString();
  								                       document.getElementById('display').innerHTML = this.numero;
     	                               }
 								    }
@@ -82,8 +87,8 @@ for (var i = 0; i < this.operandos.length; i++) {
   calcular: function(){},
 
  	limpiarCalculadora: function() {
- 		                               this.numero = 0;
- 		                               document.getElementById('display').innerHTML = 0;
+ 		                               this.numero = "0";
+ 		                               document.getElementById('display').innerHTML = "0";
  		                             }
 }
 
