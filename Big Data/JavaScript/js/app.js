@@ -1,81 +1,101 @@
 var Calculadora = {
 	                  operandos : [] ,
+										resultados : [] ,
 	                  numero : new String(),
 
 	ingresaNumero: function(num) {
-								   var display = document.getElementById("display").innerHTML;
+								   								var display = document.getElementById("display").innerHTML;
 
-									 if ( display.length == 1 && display == "0")
-									 	{
-									 		this.numero = num ;
-											document.getElementById('display').innerHTML = this.numero;
-									 	}
-								   else if (display.length < 8)
-								    {
-								      if ((display == "0" && num != "0") || (display != "0" && num == "0") || (display != "0" && num != "0"))
-    	                          	   {
-    	                                 this.numero = this.numero + num.toString();
- 								                       document.getElementById('display').innerHTML = this.numero;
-    	                               }
-								    }
-
- 							     },
+									 								if ( display.length == 1 && display == "0")
+									 									{
+									 										this.numero = num ;
+																			document.getElementById('display').innerHTML = this.numero;
+									 									}
+								   								else if (display.length < 8)
+								    								{
+								      								if ((display == "0" && num != "0") ||
+																						(display != "0" && num == "0") ||
+																			       	(display != "0" && num != "0"))
+    	                          	   		{
+    	                                 		this.numero = this.numero + num.toString();
+ 								                       		document.getElementById('display').innerHTML = this.numero;
+    	                               		}
+								    								}
+ 							     							},
 
     adicionaPunto: function() {
-    							var display = document.getElementById("display").innerHTML;
+    														var display = document.getElementById("display").innerHTML;
 
-								if ( display.length == 1 && display == 0)
+																if ( display == "")
+																	{ return; }
+
+																if ( display.length == 1 && display == 0)
                                   {
                                   	this.numero = "0."
                                   	document.getElementById('display').innerHTML = this.numero;
                                   }
-    	                        else if (display.indexOf(".") == -1)
-    	                          {
-    	                            this.numero = this.numero +  ".";
- 								    document.getElementById('display').innerHTML = this.numero;
-    	                          }
- 							   },
+    	                        	else if (display.indexOf(".") == -1)
+    	                          	{
+    	                            	this.numero = this.numero +  ".";
+ 								    								document.getElementById('display').innerHTML = this.numero;
+    	                          	}
+ 							   						  },
 
  	adicionaSigno: function() {
- 								var display = document.getElementById("display").innerHTML;
+ 															var display = document.getElementById("display").innerHTML;
 
-
- 								if ((display != 0) && (display.indexOf("-") == -1 ))
+ 															if ((display != 0) && (display.indexOf("-") == -1 ))
     	                          {
     	                            this.numero = "-" + this.numero ;
- 								    document.getElementById('display').innerHTML = this.numero;
+ 								    							document.getElementById('display').innerHTML = this.numero;
     	                          }
     	                        else if ((display != 0) && (display.indexOf("-") != -1 ))
     	                          {
     	                          	this.numero = display.replace("-","");
     	                          	document.getElementById('display').innerHTML = this.numero;
     	                          }
- 							  },
+ 							  					  },
 
  	agregaOperandos : function(operacion) {
-                                            var long = this.operandos.length;
+                                          var long = this.operandos.length;
 
-                                            this.operandos[long] = this.numero;
-                                            console.log(long + "long");
+																					if ( this.numero != "" )
+																						{ this.operandos[long] = this.numero; }
 
-                                            switch (operacion)
-                                             {
-                                               case "dividido":
-                                                    this.operandos[long+1] = "dividido";
-                                               break;
-                                               case "por":
-                                                    this.operandos[long+1] = "por";
-                                               break;
-                                               case "menos":
-                                                    this.operandos[long+1] = "menos";
-                                               break;
-                                               case "mas":
-                                                    this.operandos[long+1] = "mas";
-                                               break;
-                                               case "raiz":
-                                                    this.operandos[long] = Math.sqrt(this.operandos[long]);
-                                               break;
-                                             }
+                                          console.log(long + "long");
+
+																					if (( this.operandos[long-1] == "raiz" && operacion == "raiz") ||
+																					     	( this.operandos[long-1] == "raiz" && operacion == "dividido") ||
+																							 		( this.operandos[long-1] == "raiz" && operacion == "por") ||
+																							 			( this.operandos[long-1] == "raiz" && operacion == "mas") ||
+																							 				( this.operandos[long-1] == "raiz" && operacion == "menos"))
+																						{
+																							return;
+																						}
+
+																					console.log("paso por aca");
+
+                                          switch (operacion)
+                                            {
+                                              case "dividido":
+                                                  this.operandos[long+1] = "dividido";
+                                              break;
+                                              case "por":
+                                                  this.operandos[long+1] = "por";
+                                              break;
+                                              case "menos":
+                                                  this.operandos[long+1] = "menos";
+                                              break;
+                                              case "mas":
+                                                  this.operandos[long+1] = "mas";
+                                              break;
+                                              case "raiz":
+                                                  this.operandos[long+1] = "raiz";
+                                              break;
+                                        		}
+
+																					document.getElementById('display').innerHTML = "";
+																					this.numero = "";
 
 for (var i = 0; i < this.operandos.length; i++) {
   console.log(this.operandos[i]);
@@ -84,10 +104,75 @@ for (var i = 0; i < this.operandos.length; i++) {
 
  	                                      },
 
-  calcular: function(){},
+  aplicaOperacion: function (op1,operacion,op2)
+											{
+												switch (operacion)
+													{
+														case "dividido":
+																resultado = parseInt(op1) / parseInt(op2);
+																this.resultados[0] = resultado;
+																this.resultados[1] = "dividido";
+																this.resultados[2] = op2;
+														break;
+														case "por":
+																resultado = parseInt(op1) * parseInt(op2);
+																this.resultados[0] = resultado;
+																this.resultados[1] = "por";
+																this.resultados[2] = op2;
+														break;
+														case "menos":
+																resultado = parseInt(op1) - parseInt(op2);
+																this.resultados[0] = resultado;
+																this.resultados[1] = "menos";
+																this.resultados[2] = op2;
+														break;
+														case "mas":
+																resultado = parseInt(op1) + parseInt(op2);
+																this.resultados[0] = resultado;
+																this.resultados[1] = "mas";
+																this.resultados[2] = op2;
+														break;
+														case "raiz":
+																resultado = Math.sqrt(op1);
+																this.resultados[0] = resultado;
+																this.resultados[1] = "raiz";
+																this.resultados[2] = "";
+														break;
+													}
+
+												return resultado;
+											},
+
+  calcular: function(){
+												var resultado = 0;
+												var i = 0;
+												var long = this.operandos.length;
+
+												this.operandos[long] = this.numero;
+												long += 1;
+
+ 												if ( long == 0 )
+													{
+ 														resultado = aplicaOperacion(this.resultados[0],this.resultados[1],this.resultados[2]);
+ 													}
+												else
+													{
+														do
+														  {
+																resultado = aplicaOperacion(this.operandos[i],this.operandos[i+1],this.operandos[i+2]);
+				 											}
+														while ( i < long )
+														this.operandos = [];
+												  }
+
+												document.getElementById('display').innerHTML = resultado;
+
+	                    },
 
  	limpiarCalculadora: function() {
  		                               this.numero = "0";
+																	 this.operandos = [];
+																	 this.resultados = [];
  		                               document.getElementById('display').innerHTML = "0";
  		                             }
 }
@@ -116,6 +201,6 @@ document.getElementById('por').addEventListener("click", function(){Calculadora.
 document.getElementById('menos').addEventListener("click", function(){Calculadora.agregaOperandos("menos");});
 document.getElementById('mas').addEventListener("click", function(){Calculadora.agregaOperandos("mas");});
 
-document.getElementById('igual').addEventListener("click", function(){Calculadora.calcular("igual");});
+document.getElementById('igual').addEventListener("click", function(){Calculadora.calcular();});
 
 document.getElementById('raiz').addEventListener("click", function(){Calculadora.agregaOperandos("raiz");});
