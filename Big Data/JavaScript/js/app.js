@@ -26,7 +26,7 @@ var Calculadora = {
     adicionaPunto: function() {
     														var display = document.getElementById("display").innerHTML;
 
-																if ( display == "")
+																if ( display == "" || this.numero == "")
 																	{ return; }
 
 																if ( display.length == 1 && display == 0)
@@ -43,6 +43,9 @@ var Calculadora = {
 
  	adicionaSigno: function() {
  															var display = document.getElementById("display").innerHTML;
+
+															if ( this.numero == "" )
+																{ return; }
 
  															if ((display != 0) && (display.indexOf("-") == -1 ))
     	                          {
@@ -62,8 +65,6 @@ var Calculadora = {
 																					if ( this.numero != "" )
 																						{ this.operandos[long] = this.numero; }
 
-                                          console.log(long + "long");
-
 																					if (( this.operandos[long-1] == "raiz" && operacion == "raiz") ||
 																					     	( this.operandos[long-1] == "raiz" && operacion == "dividido") ||
 																							 		( this.operandos[long-1] == "raiz" && operacion == "por") ||
@@ -72,8 +73,6 @@ var Calculadora = {
 																						{
 																							return;
 																						}
-
-																					console.log("paso por aca");
 
                                           switch (operacion)
                                             {
@@ -97,14 +96,9 @@ var Calculadora = {
 																					document.getElementById('display').innerHTML = "";
 																					this.numero = "";
 
-for (var i = 0; i < this.operandos.length; i++) {
-  console.log(this.operandos[i]);
-}
-
-
  	                                      },
 
-  aplicaOperacion: function (op1,operacion,op2)
+ aplicaOperacion: function(op1,operacion,op2)
 											{
 												switch (operacion)
 													{
@@ -117,31 +111,30 @@ for (var i = 0; i < this.operandos.length; i++) {
 														case "por":
 																resultado = parseInt(op1) * parseInt(op2);
 																this.resultados[0] = resultado;
-																this.resultados[1] = "por";
+															  this.resultados[1] = "por";
 																this.resultados[2] = op2;
 														break;
-														case "menos":
+													  case "menos":
 																resultado = parseInt(op1) - parseInt(op2);
 																this.resultados[0] = resultado;
 																this.resultados[1] = "menos";
-																this.resultados[2] = op2;
+															  this.resultados[2] = op2;
 														break;
 														case "mas":
 																resultado = parseInt(op1) + parseInt(op2);
 																this.resultados[0] = resultado;
 																this.resultados[1] = "mas";
-																this.resultados[2] = op2;
+															  this.resultados[2] = op2;
 														break;
 														case "raiz":
 																resultado = Math.sqrt(op1);
 																this.resultados[0] = resultado;
 																this.resultados[1] = "raiz";
 																this.resultados[2] = "";
-														break;
-													}
-
+																break;
+												  }
 												return resultado;
-											},
+										  },
 
   calcular: function(){
 												var resultado = 0;
@@ -153,18 +146,23 @@ for (var i = 0; i < this.operandos.length; i++) {
 
  												if ( long == 0 )
 													{
- 														resultado = aplicaOperacion(this.resultados[0],this.resultados[1],this.resultados[2]);
+ 														resultado = this.aplicaOperacion(this.resultados[0],this.resultados[1],this.resultados[2]);
  													}
 												else
 													{
 														do
 														  {
-																resultado = aplicaOperacion(this.operandos[i],this.operandos[i+1],this.operandos[i+2]);
+																if ( i == 0)
+																	{ resultado = this.aplicaOperacion(this.operandos[i],this.operandos[i+1],this.operandos[i+2]); }
+																else
+																	{	resultado = this.aplicaOperacion(resultado,this.operandos[i+1],this.operandos[i+2]); }
+																i += 2;
 				 											}
-														while ( i < long )
+														while ( i+1 < long )
 														this.operandos = [];
 												  }
 
+												this.numero = "";
 												document.getElementById('display').innerHTML = resultado;
 
 	                    },
