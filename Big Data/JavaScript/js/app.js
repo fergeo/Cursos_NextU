@@ -26,10 +26,12 @@ var Calculadora = {
     adicionaPunto: function() {
     														var display = document.getElementById("display").innerHTML;
 
-																if ( display == "" || this.numero == "")
+																console.log(display);
+
+																if ( display == "" )
 																	{ return; }
 
-																if ( display.length == 1 && display == 0)
+																if ( display == 0)
                                   {
                                   	this.numero = "0."
                                   	document.getElementById('display').innerHTML = this.numero;
@@ -100,28 +102,29 @@ var Calculadora = {
 
  aplicaOperacion: function(op1,operacion,op2)
 											{
+
 												switch (operacion)
 													{
 														case "dividido":
-																resultado = parseInt(op1) / parseInt(op2);
+																resultado = Number(op1) / Number(op2);
 																this.resultados[0] = resultado;
 																this.resultados[1] = "dividido";
 																this.resultados[2] = op2;
 														break;
 														case "por":
-																resultado = parseInt(op1) * parseInt(op2);
+																resultado = Number(op1) * Number(op2);
 																this.resultados[0] = resultado;
 															  this.resultados[1] = "por";
 																this.resultados[2] = op2;
 														break;
 													  case "menos":
-																resultado = parseInt(op1) - parseInt(op2);
+																resultado = Number(op1) - Number(op2);
 																this.resultados[0] = resultado;
 																this.resultados[1] = "menos";
 															  this.resultados[2] = op2;
 														break;
 														case "mas":
-																resultado = parseInt(op1) + parseInt(op2);
+																resultado = Number(op1) + Number(op2);
 																this.resultados[0] = resultado;
 																this.resultados[1] = "mas";
 															  this.resultados[2] = op2;
@@ -140,30 +143,41 @@ var Calculadora = {
 												var resultado = 0;
 												var i = 0;
 												var long = this.operandos.length;
+												var longR = this.resultados.length;
 
 												this.operandos[long] = this.numero;
 												long += 1;
 
- 												if ( long == 0 )
+												console.log(long);
+
+ 												if ( long == 1 )
 													{
  														resultado = this.aplicaOperacion(this.resultados[0],this.resultados[1],this.resultados[2]);
  													}
 												else
 													{
-														do
-														  {
-																if ( i == 0)
-																	{ resultado = this.aplicaOperacion(this.operandos[i],this.operandos[i+1],this.operandos[i+2]); }
-																else
-																	{	resultado = this.aplicaOperacion(resultado,this.operandos[i+1],this.operandos[i+2]); }
-																i += 2;
-				 											}
-														while ( i+1 < long )
-														this.operandos = [];
+														if ( longR > 1)
+															{
+																resultado = this.aplicaOperacion(this.resultados[0],this.operandos[i+1],this.operandos[i+2]);
+															}
+														else
+															{
+																do
+																	{
+																		if ( i == 0)
+																			{ resultado = this.aplicaOperacion(this.operandos[i],this.operandos[i+1],this.operandos[i+2]); }
+																		else
+																			{	resultado = this.aplicaOperacion(resultado,this.operandos[i+1],this.operandos[i+2]); }
+																		i += 2;
+																	}
+																while ( i+1 < long )
+															}
+
 												  }
 
 												this.numero = "";
 												document.getElementById('display').innerHTML = resultado;
+												this.operandos = [];
 
 	                    },
 
@@ -175,6 +189,26 @@ var Calculadora = {
  		                             }
 }
 
+
+
+/*
+document.getElementById('1').addEventListener("click", function(){
+
+var obj = document.getElementById('1');
+var alto = obj.style.width;
+var ancho = obj.style.height;
+
+obj.style.width = "20%";
+obj.style.height = "20%";
+
+var myVar = setTimeout(function () {
+	obj.style.width = ancho;
+	obj.style.height = alto;
+}, 1000)
+
+});
+
+*/
 
 
 document.getElementById('0').addEventListener("click", function(){Calculadora.ingresaNumero(0);});
