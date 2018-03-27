@@ -148,8 +148,6 @@ var Calculadora = {
 												this.operandos[long] = this.numero;
 												long += 1;
 
-												console.log(long);
-
  												if ( long == 1 )
 													{
  														resultado = this.aplicaOperacion(this.resultados[0],this.resultados[1],this.resultados[2]);
