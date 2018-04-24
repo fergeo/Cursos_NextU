@@ -1,212 +1,65 @@
-var Calculadora = {
-	                  operandos : [] ,
-										resultados : [] ,
-	                  numero : new String(),
 
-	ingresaNumero: function(num) {
-								   								var display = document.getElementById("display").innerHTML;
+var Calculadora = (function () {
+	var operandos = [];
+	var resultados = [] ;
+	var	numero = new String();
 
-									 								if ( display.length == 1 && display == "0")
-									 									{
-									 										this.numero = num ;
-																			document.getElementById('display').innerHTML = this.numero;
-									 									}
-								   								else if (display.length < 8)
-								    								{
-								      								if ((display == "0" && num != "0") ||
-																						(display != "0" && num == "0") ||
-																			       	(display != "0" && num != "0"))
-    	                          	   		{
-    	                                 		this.numero = this.numero + num.toString();
- 								                       		document.getElementById('display').innerHTML = this.numero;
-    	                               		}
-								    								}
- 							     							},
+	function ingresoNumero (num) {
+																			var display = document.getElementById("display").innerHTML;
 
-    adicionaPunto: function() {
-    														var display = document.getElementById("display").innerHTML;
+																			//this.cambiaTamanio(num);
 
-																console.log(display);
-
-																if ( display == "" )
-																	{ return; }
-
-																if ( display == 0)
-                                  {
-                                  	this.numero = "0."
-                                  	document.getElementById('display').innerHTML = this.numero;
-                                  }
-    	                        	else if (display.indexOf(".") == -1)
-    	                          	{
-    	                            	this.numero = this.numero +  ".";
- 								    								document.getElementById('display').innerHTML = this.numero;
-    	                          	}
- 							   						  },
-
- 	adicionaSigno: function() {
- 															var display = document.getElementById("display").innerHTML;
-
-															if ( this.numero == "" )
-																{ return; }
-
- 															if ((display != 0) && (display.indexOf("-") == -1 ))
-    	                          {
-    	                            this.numero = "-" + this.numero ;
- 								    							document.getElementById('display').innerHTML = this.numero;
-    	                          }
-    	                        else if ((display != 0) && (display.indexOf("-") != -1 ))
-    	                          {
-    	                          	this.numero = display.replace("-","");
-    	                          	document.getElementById('display').innerHTML = this.numero;
-    	                          }
- 							  					  },
-
- 	agregaOperandos : function(operacion) {
-                                          var long = this.operandos.length;
-
-																					if ( this.numero != "" )
-																						{ this.operandos[long] = this.numero; }
-
-																					if (( this.operandos[long-1] == "raiz" && operacion == "raiz") ||
-																					     	( this.operandos[long-1] == "raiz" && operacion == "dividido") ||
-																							 		( this.operandos[long-1] == "raiz" && operacion == "por") ||
-																							 			( this.operandos[long-1] == "raiz" && operacion == "mas") ||
-																							 				( this.operandos[long-1] == "raiz" && operacion == "menos"))
+																			if ( display.length == 1 && display == "0")
+																				{
+																					this.numero = num ;
+																					document.getElementById('display').innerHTML = this.numero;
+																				}
+																			else if (display.length < 8)
+																				{
+																					if ((display == "0" && num != "0") ||
+																								(display != "0" && num == "0") ||
+																									(display != "0" && num != "0"))
 																						{
-																							return;
+																							this.numero = this.numero + num.toString();
+																								document.getElementById('display').innerHTML = this.numero;
 																						}
+																				}
+																			}
 
-                                          switch (operacion)
-                                            {
-                                              case "dividido":
-                                                  this.operandos[long+1] = "dividido";
-                                              break;
-                                              case "por":
-                                                  this.operandos[long+1] = "por";
-                                              break;
-                                              case "menos":
-                                                  this.operandos[long+1] = "menos";
-                                              break;
-                                              case "mas":
-                                                  this.operandos[long+1] = "mas";
-                                              break;
-                                              case "raiz":
-                                                  this.operandos[long+1] = "raiz";
-                                              break;
-                                        		}
+  // Public API
+  return {
+    ingresaNumero: function (num) {
+			          ingresoNumero(num);
+    },
 
-																					document.getElementById('display').innerHTML = "";
-																					this.numero = "";
-
- 	                                      },
-
- aplicaOperacion: function(op1,operacion,op2)
-											{
-
-												switch (operacion)
-													{
-														case "dividido":
-																resultado = Number(op1) / Number(op2);
-																this.resultados[0] = resultado;
-																this.resultados[1] = "dividido";
-																this.resultados[2] = op2;
-														break;
-														case "por":
-																resultado = Number(op1) * Number(op2);
-																this.resultados[0] = resultado;
-															  this.resultados[1] = "por";
-																this.resultados[2] = op2;
-														break;
-													  case "menos":
-																resultado = Number(op1) - Number(op2);
-																this.resultados[0] = resultado;
-																this.resultados[1] = "menos";
-															  this.resultados[2] = op2;
-														break;
-														case "mas":
-																resultado = Number(op1) + Number(op2);
-																this.resultados[0] = resultado;
-																this.resultados[1] = "mas";
-															  this.resultados[2] = op2;
-														break;
-														case "raiz":
-																resultado = Math.sqrt(op1);
-																this.resultados[0] = resultado;
-																this.resultados[1] = "raiz";
-																this.resultados[2] = "";
-																break;
-												  }
-												return resultado;
-										  },
-
-  calcular: function(){
-												var resultado = 0;
-												var i = 0;
-												var long = this.operandos.length;
-												var longR = this.resultados.length;
-
-												this.operandos[long] = this.numero;
-												long += 1;
-
- 												if ( long == 1 )
-													{
- 														resultado = this.aplicaOperacion(this.resultados[0],this.resultados[1],this.resultados[2]);
- 													}
-												else
-													{
-														if ( longR > 1)
-															{
-																resultado = this.aplicaOperacion(this.resultados[0],this.operandos[i+1],this.operandos[i+2]);
-															}
-														else
-															{
-																do
-																	{
-																		if ( i == 0)
-																			{ resultado = this.aplicaOperacion(this.operandos[i],this.operandos[i+1],this.operandos[i+2]); }
-																		else
-																			{	resultado = this.aplicaOperacion(resultado,this.operandos[i+1],this.operandos[i+2]); }
-																		i += 2;
-																	}
-																while ( i+1 < long )
-															}
-
-												  }
-
-												this.numero = "";
-												document.getElementById('display').innerHTML = resultado;
-												this.operandos = [];
-
-	                    },
-
- 	limpiarCalculadora: function() {
- 		                               this.numero = "0";
-																	 this.operandos = [];
-																	 this.resultados = [];
- 		                               document.getElementById('display').innerHTML = "0";
- 		                             }
-}
-
+    anotherPublicMethod () {
+    }
+  }
+}());
 
 
 /*
-document.getElementById('1').addEventListener("click", function(){
+var Calculadora = ( function(){
 
-var obj = document.getElementById('1');
-var alto = obj.style.width;
-var ancho = obj.style.height;
 
-obj.style.width = "20%";
-obj.style.height = "20%";
+/*
+											cambiaTamanio: function(ide) {
 
-var myVar = setTimeout(function () {
-	obj.style.width = ancho;
-	obj.style.height = alto;
-}, 1000)
+																var obj = document.getElementById(ide);
+																var alto = obj.style.width;
+																var ancho = obj.style.height;
 
-});
+																obj.style.width = "20%";
+																obj.style.height = "20%";
 
-*/
+																var myVar = setTimeout(function () {
+																	obj.style.width = ancho;
+																	obj.style.height = alto;
+																}, 100);
+
+															},
+															*/
+
 
 
 document.getElementById('0').addEventListener("click", function(){Calculadora.ingresaNumero(0);});
@@ -219,7 +72,7 @@ document.getElementById('6').addEventListener("click", function(){Calculadora.in
 document.getElementById('7').addEventListener("click", function(){Calculadora.ingresaNumero(7);});
 document.getElementById('8').addEventListener("click", function(){Calculadora.ingresaNumero(8);});
 document.getElementById('9').addEventListener("click", function(){Calculadora.ingresaNumero(9);});
-
+/*
 document.getElementById('sign').addEventListener("click", function(){Calculadora.adicionaSigno();});
 
 document.getElementById('punto').addEventListener("click", function(){Calculadora.adicionaPunto();});
@@ -234,3 +87,4 @@ document.getElementById('mas').addEventListener("click", function(){Calculadora.
 document.getElementById('igual').addEventListener("click", function(){Calculadora.calcular();});
 
 document.getElementById('raiz').addEventListener("click", function(){Calculadora.agregaOperandos("raiz");});
+*/
