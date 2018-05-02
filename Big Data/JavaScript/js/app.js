@@ -1,8 +1,13 @@
 
 var Calculadora = (function () {
-										var operandos = [];
-										var resultados = [] ;
-										var	numero = new String();
+										var operandos, resultados, numero;
+
+										function inizializar () {
+											operandos = [];
+											resultados = [] ;
+											numero = new String();
+											console.log("Termino de inizializar");
+										};
 
 										function cambiaTamanio (ide) {
 																										var obj = document.getElementById(ide);
@@ -49,9 +54,6 @@ var Calculadora = (function () {
 
 																								 	cambiaTamanio("punto");
 
-																								 	if ( display == "" || numero == "" )
-																								 		{ return; }
-
 																								 	if ( display == 0)
 																								 	  {
 																								 	   	numero = "0."
@@ -72,16 +74,14 @@ var Calculadora = (function () {
 																								 	if ( numero == "" )
 																								 		{ return; }
 
-																								 	if ((display != 0) && (display.indexOf("-") == -1 ))
-																								 	  {
-																								 	  	numero = "-" + numero ;
-																								 	  	document.getElementById('display').innerHTML = numero;
-																								 	  }
-																								 	else if ((display != 0) && (display.indexOf("-") != -1 ))
-																								 	  {
-																								 	    numero = display.replace("-","");
-																								 	    document.getElementById('display').innerHTML = numero;
-																								 	  }
+																									if (numero == "0.")
+																										{ numero = "-0."; }
+																								 	else if ((display != 0) && (display.indexOf("-") == -1 ))
+																								 	  { numero = "-" + numero ; }
+																								 	else if (display.indexOf("-") != -1 )
+																								 	  { numero = display.replace("-",""); }
+
+																									document.getElementById('display').innerHTML = numero;
 																							  };
 
 										 function	agregarOperandos (operacion) {
@@ -114,8 +114,8 @@ var Calculadora = (function () {
 																								 	              case "mas":
 																								 	                operandos[long+1] = "mas";
 																								 	              break;
-																								 	              case "raiz":
-																								 	                operandos[long+1] = "raiz";
+																																case "raiz":
+																								 	                return;
 																								 	              break;
 																								 	            }
 
@@ -128,6 +128,11 @@ var Calculadora = (function () {
 																																switch (operacion)
 																								 	 								{
 																								 	 									case "dividido":
+																																		  if ( op2 == "0" )
+																																				{
+																																		  		alert("No se puede dividir por cero");
+																																					return "0";
+																																		  	}
 																								 	 										resultado = Number(op1) / Number(op2);
 																								 	 										resultados[0] = resultado;
 																								 	 										resultados[1] = "dividido";
@@ -151,14 +156,9 @@ var Calculadora = (function () {
 																								 	 										resultados[1] = "mas";
 																								 	 										resultados[2] = op2;
 																								 	 									break;
-																								 	 									case "raiz":
-																								 	 										resultado = Math.sqrt(op1);
-																								 	 										resultados[0] = resultado;
-																								 	 										resultados[1] = "raiz";
-																								 	 										resultados[2] = "";
-																								 	 									break;
 																								 	 								}
-																								 	 							return resultado;
+
+																								 	 							return String(Math.round(resultado * 10)/10).slice(0,8);
 																								 	 						};
 
 												  function calcular () {
@@ -206,19 +206,23 @@ var Calculadora = (function () {
 																		 									operandos = [];
 																		 									resultados = [];
 																		  		            document.getElementById('display').innerHTML = "0";
-																		  		         }
+																		  		          };
 
 
   									return {
+											        init () { inizializar();},
     													ingresaNumero (num) { ingresarNumero(num); },
 															limpiaCalculadora () {  limpiarCalculadora(); },
 															adicionaSigno () { adicionarSigno(); },
 															adicionaPunto () { adicionarPunto(); },
 															agregaOperandos (operacion) { agregarOperandos(operacion); },
 															calcula() { calcular();}
-  			 									 }
+													 }
+
 }());
 
+
+window.addEventListener("load", Calculadora.init() );
 
 document.getElementById('0').addEventListener("click", function(){Calculadora.ingresaNumero(0);});
 document.getElementById('1').addEventListener("click", function(){Calculadora.ingresaNumero(1);});
