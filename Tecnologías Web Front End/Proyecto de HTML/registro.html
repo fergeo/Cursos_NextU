@@ -33,20 +33,40 @@
     <article>
       <p>
         <hr>
-        <h1>Registro</h1>
+        <h1>Inicio de Sesi&oacute;n</h1>
       </p>
       <p>
-        <form name="AgregarEstudios" action="">
-          <p>
-            <label for="Email" id="Email"><strong>Email*</strong></label><br>
-            <input type="text" name="Email" id="TextEmail" required></textarea>
-          </p>
-          <p>
-            <label for="Contrasena" id="Contrasena"><strong>Contrase&ntilde;a*</strong></label><br>
-            <input type="text" name="Contrasena" id="TextContrasena" required></textarea>
-          </p>
-          <p><input type="submit" value="Continuar"></p>
-      </form>
+        <form action="#">
+          <fieldset>
+            <legend>Registro</legend>
+              <p>
+                <label for="email" id="email"><strong>Email*</strong></label><br>
+                <input type="text" name="email" id="TextEmail" required/>
+              </p>
+              <p>
+                <label for="contrasena" id="contrasena"><strong>Contrase&ntilde;a*</strong></label><br>
+                <input type="text" name="contrasena" id="TextContrasena" required/>
+              </p>
+              <p>
+                <label for="secContrasena" id="secContrasena"><strong>Confirmaci&oacute;n de contrase&ntilde;a*</strong></label><br>
+                <input type="text" name="secContrasena" id="secContrasena" required/>
+              </p>
+              <p>
+                <label for="dondeNosVio" id="dondeNosVio"><strong>Donde nos vi&oacute;:</strong></label><br>
+                <input type="radio" name="terminos" id="terminos">Google
+                <input type="radio" name="terminos" id="terminos">Otro
+              </p>
+              <p>
+                <label for="comentario" id="comentario"><strong>Comentario*</strong></label><br>
+                <textarea name="comentario" cols="30" rows="10"></textarea>
+              </p>
+              <p>
+                <label for="terminos" id="terminos"><strong>Acepta T&eacute;rminos y Condiciones</strong></label><br>
+
+              </p>
+              <p><input type="submit" value="Continuar"></p>
+          </fieldset>
+        </form>
       </p>
     </article>
     <footer>
